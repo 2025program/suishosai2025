@@ -1,0 +1,49 @@
+/* 全体コンテナ：絶対配置の背景画像に対応するため position: relative を指定 */
+.countdown {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 背景画像エリア：画面いっぱいに広がり、右側を中心に表示 */
+.background-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* コンテンツエリア：中央寄せでレスポンシブな余白を持たせる */
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* カウントダウンテキストのスタイル */
+.time {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+
+.title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0;
+}
+
+.days {
+    font-size: clamp(3rem, 8vw, 8rem);
+    margin: 0;
+    font-weight: bold;
+}

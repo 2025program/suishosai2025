@@ -1,0 +1,543 @@
+.body {
+    line-height: inherit;
+    margin: 0;
+}
+
+.img,
+.svg {
+    display: block;
+}
+
+.img {
+    height: auto;
+    max-width: 100%
+}
+
+.newsbox {
+    margin-top: 0;
+    position: relative;
+    z-index: 3
+}
+
+.newsbox-newstag {
+    position: absolute;
+    left: -25px;
+    top: -20px;
+    height: 28vw;
+    min-height: 110px;
+    width: auto;
+    z-index: 5;
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+
+.newsbox-up {
+    background-color: #4daaff;
+    pointer-events: none;
+    width: 100%;
+    height: 25vw;
+    min-height: 120px;
+}
+
+.newsbox-up:before {
+    background-color: #4daaff;
+    content: "";
+    display: block;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    width: 100%;
+}
+
+.newsbox-up-sp {
+    left: 0;
+    position: absolute;
+    top: 1px;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%)
+}
+
+.newsbox-animation {
+    position: absolute;
+    top: 3.75rem;
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+}
+
+/* お知らせコンテンツ */
+.newsbox-content {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #4daaff;
+    display: flex;
+    justify-content: center;
+    /* 中央寄せ */
+}
+
+/* 70%部分のスクロール用コンテナ */
+.news-scroll-container {
+    width: 70%;
+    max-height: 60vh;
+    min-height: 30vh;
+    overflow-y: auto;
+}
+
+/* 各ニュース項目の親（中央寄せ用） */
+.boxkey {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/* ニュース項目自体（左寄せのテキスト） */
+.news-item {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.news-item-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.news-item-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.news-item-time {
+    width: 150px;
+    margin-right: 20px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.news-item-body {
+    flex: 1;
+    text-align: left;
+}
+
+.news-item-link {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* 区切り線（中央寄せ＆70%に合わせる） */
+.news-divider {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    margin: 20px auto;
+}
+
+/* モバイル用（幅767px以下） */
+@media (max-width: 767px) {
+    .news-scroll-container {
+        width: 90%;
+    }
+
+    /* 左右のレイアウトを縦並びに変更 */
+    .news-item-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .news-item-time {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
+
+.map {
+    position: relative;
+    z-index: 3;
+}
+
+.mapbox-up {
+    background-color: #ff0000;
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.titlecover {
+    position: relative;
+    z-index: 2;
+}
+
+.mapbox-up-sp {
+    display: block;
+}
+
+.mapbox-animation {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+    margin-top: 1rem;
+}
+
+@media (max-width: 767px) {
+    .mapbox-animation {
+        z-index: 5;
+        -webkit-transform: rotate(-2deg);
+        transform: rotate(-2deg);
+        margin-top: 0rem;
+    }
+
+    .mapbox-up {
+        background: rgb(71, 170, 255);
+        background: linear-gradient(180deg, rgba(77, 170, 255, 1) 43%, rgba(227, 227, 227, 1) 57%);
+    }
+}
+
+.charmbox-charmtag {
+    position: absolute;
+    left: -25px;
+    top: 0px;
+    height: 28vw;
+    min-height: 110px;
+    width: auto;
+    z-index: 7;
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+
+.itemcharm {
+    height: 50vh;
+    background-color: #e3e3e3;
+}
+
+.foot {
+    position: relative;
+    z-index: 3;
+}
+
+.footbox-up {
+    background-color: #ff9300;
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.titlecover {
+    position: relative;
+    z-index: 2;
+}
+
+.footbox-up-sp {
+    display: block;
+}
+
+.footbox-animation {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4rem);
+    margin-top: 10vw;
+}
+
+@media (max-width: 767px) {
+    .footbox-animation {
+        z-index: 5;
+        -webkit-transform: rotate(-2deg);
+        transform: rotate(-2deg);
+        margin-top: 0rem;
+    }
+
+    .footbox-up {
+        background: rgb(227, 227, 227);
+        background: linear-gradient(180deg, rgba(227, 227, 227, 1) 43%, rgba(255, 255, 255, 1) 57%);
+    }
+}
+
+.footbox-foottag {
+    position: absolute;
+    left: -25px;
+    top: 0px;
+    height: 28vw;
+    min-height: 110px;
+    width: auto;
+    z-index: 7;
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+
+.itemfoot {
+    height: 50vh;
+    background-color: #ffffff;
+}
+
+.imageanimation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.imageanimation.vertical {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%
+}
+
+.imageanimation-image {
+    -webkit-animation: loop 40s linear infinite;
+    animation: loop 40s linear infinite;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none
+}
+
+.imageanimation.reverse .imageanimation-image {
+    animation-direction: reverse
+}
+
+.imageanimation.vertical .imageanimation-image {
+    -webkit-animation: loopVertical 40s linear infinite;
+    animation: loopVertical 40s linear infinite
+}
+
+.imageanimation-png {
+    max-width: none;
+    width: 100%
+}
+
+.imageanimation:not(.vertical) .imageanimation-png {
+    width: auto
+}
+
+.imageanimation.hgt .imageanimation-png {
+    height: 17.3vw
+}
+
+@-webkit-keyframes loop {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+
+    to {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%)
+    }
+}
+
+@keyframes loop {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+
+    to {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%)
+    }
+}
+
+@-webkit-keyframes loopVertical {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    to {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%)
+    }
+}
+
+@keyframes loopVertical {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    to {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%)
+    }
+}
+
+.headtop {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+}
+
+.headtop:after {
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 2px;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    width: 100%
+}
+
+.headtop-leftarea {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    overflow-y: hidden;
+}
+
+.headtop-textanimation {
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 4.48%
+}
+
+.headtop-right {
+    padding-bottom: 12vw;
+    padding-top: 22.7vw;
+    position: relative
+}
+
+.headtop-right-sp {
+    max-width: none;
+    pointer-events: none;
+    width: 100%
+}
+
+.headtop-themelogo {
+    left: 6.4%;
+    position: absolute;
+    top: 4.4vw;
+    z-index: 2
+}
+
+.headtop-logo-sp {
+    width: 46%
+}
+
+.headtop-change {
+    left: 5.5%;
+    position: absolute;
+    top: 46vw;
+    z-index: 2
+}
+
+.headtop-change-sp {
+    max-width: none;
+    width: 12vw
+}
+
+.hidden-x-side {
+    overflow-x: hidden
+}
+
+@media (min-width:768px) {
+    .newsbox-up {
+        overflow: hidden;
+        height: 20vw;
+        max-height: 300px;
+    }
+
+    .newsbox-up:before {
+        display: none
+    }
+
+    .newsbox-up-sp {
+        display: block
+    }
+
+    .newsbox-newstag {
+        left: -40px;
+        top: 10px;
+        height: 18vw;
+        max-height: 250px;
+    }
+
+    .charmbox-charmtag {
+        left: -40px;
+        top: 0;
+        height: 18vw;
+        max-height: 250px;
+    }
+
+    .newsbox-animation {
+        -webkit-transform: rotate(-1deg);
+        transform: rotate(-1deg)
+    }
+
+    .footbox-foottag {
+        left: -40px;
+        top: 10vw;
+        height: 18vw;
+        max-height: 250px;
+    }
+
+    .imageanimation.hgt .imageanimation-png {
+        height: 7.4vw
+    }
+
+    .headtop:after {
+        display: none
+    }
+
+    .headtop-left {
+        position: relative
+    }
+
+    .headtop-textanimation {
+        display: block;
+    }
+
+    .headtop-right {
+        margin-left: auto;
+        max-width: 70.7%;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-top: 0;
+        max-height: 110vh;
+        overflow-y: hidden;
+    }
+
+    .headtop-themelogo {
+        left: auto;
+        margin-top: 5.1%;
+        position: static;
+        top: auto
+    }
+
+    .headtop-logo-sp {
+        display: block;
+        margin-left: 13.8%;
+        width: 25.9%
+    }
+
+    .headtop-change {
+        left: auto;
+        margin-top: 3.6%;
+        position: relative;
+        top: auto
+    }
+
+    .headtop-change-sp {
+        display: block;
+        margin-left: 10.2%;
+        width: 30.9375%
+    }
+}
