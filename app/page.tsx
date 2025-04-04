@@ -192,8 +192,8 @@ const Home: React.FC = () => {
 
               <div className="newsbox-content">
                 <div className="news-scroll-container">
-                  {loading && <p>Loading announcements...</p>}
-                  {!loading && announcements.length === 0 && <p>No announcements found.</p>}
+                  {loading && <p>お知らせを取得中</p>}
+                  {!loading && announcements.length === 0 && <p>お知らせはありませんでした</p>}
                   {announcements.map((announcement) => (
                     <div key={announcement.id} className="boxkey">
                       <div className="news-item">
