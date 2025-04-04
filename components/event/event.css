@@ -11,9 +11,7 @@
 .roller {
     position: absolute;
     top: 0;
-    left: 0;
     z-index: -1;
-    transform: scaleY(-1) rotate(180deg);
 }
 
 .header {
@@ -31,6 +29,20 @@
     font-size: 10vw;
 }
 
+@media (max-width: 767px) {
+    .roller {
+        right: 0;
+        left: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1399px) {
+    .roller {
+        right: 0;
+        left: auto;
+    }
+}
+
 @media (max-width: 768px) {
     .e-title {
         font-size: 12vw;
@@ -39,20 +51,17 @@
     .header {
         height: 27vw;
     }
-
-    .roller {
-        transform: scaleY(-1) rotate(180deg);
-    }
 }
 
 @media (min-width: 1400px) {
     .roller {
-        transform: scaleY(-1) rotate(180deg);
+        left: 50%;
+        transform: translateX(-50%);
         width: 1400px;
     }
 
     .header {
-        width: 1400px;
+        width: 100%;
         height: 300px;
     }
 

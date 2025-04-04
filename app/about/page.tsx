@@ -14,10 +14,15 @@ export default function Stuff() {
 
     return (
         <main className="main">
-            <picture className='roller'>
+            <picture className="roller">
                 <source
                     type="image/webp"
-                    media="(min-width:768px)"
+                    media="(min-width: 1400px)"
+                    srcSet="/roller/roller_orange_biggest.png"
+                />
+                <source
+                    type="image/webp"
+                    media="(min-width: 768px)"
                     srcSet="/roller/roller_orange_pc.png"
                 />
                 <Image

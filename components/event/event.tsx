@@ -79,10 +79,15 @@ const EventPage: React.FC = () => {
     return (
         <main className="eventcontent">
             {/* ヘッダー */}
-            <picture className='roller'>
+            <picture className="roller">
                 <source
                     type="image/webp"
-                    media="(min-width:768px)"
+                    media="(min-width: 1400px)"
+                    srcSet="/roller/roller_blue_biggest.png"
+                />
+                <source
+                    type="image/webp"
+                    media="(min-width: 768px)"
                     srcSet="/roller/roller_blue_pc.png"
                 />
                 <Image
@@ -95,9 +100,7 @@ const EventPage: React.FC = () => {
                 />
             </picture>
             <header className="header">
-                <h1 className="e-title">
-                    EVENT
-                </h1>
+                <h1 className="e-title">EVENT</h1>
             </header>
 
             {/* メインコンテンツ */}
