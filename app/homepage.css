@@ -214,8 +214,20 @@
 }
 
 .itemcharm {
-    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
     background-color: #e3e3e3;
+}
+
+.adbox {
+    padding: 20px;
+}
+
+.ad {
+    border-radius: 20px;
+    transform: rotate(-3deg);
 }
 
 .foot {

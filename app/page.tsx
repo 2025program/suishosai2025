@@ -279,8 +279,17 @@ const Home: React.FC = () => {
                 </div>
               </div>
               <div className="itemcharm">
-                魅力的なコンテンツ
-                <p>ここに迫力のあるコンテンツを配置</p>
+                <p>めちゃくちゃ適当に書いた広告</p>
+                <a href='/map' className="adbox">
+                  <Image
+                    className="ad"
+                    src="/topad/mapad.png"
+                    alt="hi"
+                    width={800}
+                    height={577}
+                    loading="lazy"
+                  />
+                </a>
               </div>
             </section>
 
