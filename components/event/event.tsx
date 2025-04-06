@@ -61,11 +61,17 @@ const EventPage: React.FC = () => {
     // フィルタリング：選択されたすべての属性が item.attributes に含まれるかを判定（AND 判定）
     const filteredItems = useMemo(() => {
         return festivalItems.filter((item) => {
+            // タイトルと読みは既存の normalizeSearchString でチェック
             const itemSearchString = normalizeSearchString(item.title, item.reading);
-            const matchesSearch = itemSearchString.includes(normalizedSearchTerm);
+            // class は既に正規化済みなのでそのままチェック
+            const matchesTitleOrReading = itemSearchString.includes(normalizedSearchTerm);
+            const matchesClass = (item.class ?? "").includes(normalizedSearchTerm);
+            const matchesSearch = matchesTitleOrReading || matchesClass;
+
             const matchesAttribute =
                 selectedAttributes.length === 0 ||
                 selectedAttributes.every((attr) => item.attributes.includes(attr));
+
             return matchesSearch && matchesAttribute;
         });
     }, [normalizedSearchTerm, selectedAttributes]);
