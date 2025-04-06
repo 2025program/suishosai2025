@@ -145,24 +145,38 @@ const EventPage: React.FC = () => {
                     <div className="e-eventbox-f">
                         {filteredItems.length > 0 ? (
                             filteredItems.map((item, index) => (
-                                <a
-                                    key={index}
-                                    href={`/event/${encodeURIComponent(item.title)}`}
-                                    className="card"
-                                >
-                                    <div className="card-image">
-                                        <Image
-                                            src="/picture/suiran1.jpg"
-                                            alt="主役になろう"
-                                            width={594}
-                                            height={197}
-                                            loading="eager"
-                                        />
-                                    </div>
-                                    <div className="card-content">
-                                        <h3 className="card-title">{item.title}</h3>
-                                        <p className="card-group">{item.class!}</p>
-                                        <p className="card-location">{item.location!}</p>
+                                <a className="container" href={`/event/${encodeURIComponent(item.title)}`} key={index}>
+                                    <div className="card">
+                                        <div className="card-all">
+                                            <div className="pic">
+                                                <Image
+                                                    className=""
+                                                    src="/event/event.png"
+                                                    alt="画像を読み込めませんでした"
+                                                    width={1000}
+                                                    height={1000}
+                                                    priority
+                                                />
+                                            </div>
+                                            <div className='dot'>
+                                                <div className="side-r"></div>
+                                                <div className="side-l"></div>
+                                                <ul className='ul'>
+                                                    {Array.from({ length: 50 }).map((_, index) => (
+                                                        <li key={index} className='li'></li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                            <div className="card-right">
+                                                <div className="card-item-box">
+                                                    <h2>{item.title}</h2>
+                                                </div>
+                                                <div className="card-about">
+                                                    <p>開催団体 : {item.class}</p>
+                                                    <p>場所 : {item.location}</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </a>
                             ))

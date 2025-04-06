@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-height: 100vh;
+    background-color: #ebebeb;
 }
 
 .e-boxcontent {
@@ -11,7 +13,7 @@
 .roller {
     position: absolute;
     top: 0;
-    z-index: -1;
+    z-index: 1;
 }
 
 .header {
@@ -22,6 +24,7 @@
     text-align: center;
     margin-bottom: 20px;
     height: 23vw;
+    z-index: 2;
 }
 
 .e-title {
@@ -117,98 +120,258 @@
     display: flex;
     justify-content: center;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #ebebeb;
 }
 
-/* 内側グリッド：デフォルト（890px未満）は2カラム */
+/* 初期のグリッドレイアウト（1100px 以上は従来の設定） */
 .e-eventbox-f {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    /* 約Tailwindのgap-6 */
     width: 100%;
 }
 
-/* 1600px以上の場合は3カラム */
-@media (min-width: 1600px) {
+/* ----- 1100px 以上（横並びカードデザイン） ----- */
+@media (min-width: 1100px) {
+
+    /* 横並びのグリッド（例として、デフォルトで2列、さらに広い場合は3列） */
     .e-eventbox-f {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-}
 
-/* カード基本スタイル */
-/* デフォルトは縦型レイアウト（890px未満） */
-.card {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    text-decoration: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
+    @media (min-width: 1600px) {
+        .e-eventbox-f {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
 
-.card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
+    .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 
-/* 画像部分：縦型の場合は全幅、自然な高さ */
-.card-image {
-    width: 100%;
-    height: auto;
-}
+    .container .card {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        background-color: #fff;
+        overflow: hidden;
+        margin-bottom: 4px;
+        border-radius: 8px;
+    }
 
-.card-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-/* コンテンツ部分 */
-.card-content {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.card-title {
-    margin: 0 0 8px;
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.card-group,
-.card-location {
-    margin: 4px 0;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* エラーメッセージ：グリッド全体に横断表示 */
-.error-message {
-    grid-column: 1 / -1;
-    text-align: center;
-    color: red;
-}
-
-/* 890px以上の場合：カードを横型に変更 */
-@media (min-width: 890px) {
-    .card {
+    /* 横並びカード内部 */
+    .card-all {
+        width: 100%;
+        display: flex;
         flex-direction: row;
     }
 
-    /* 画像部分：固定サイズの正方形 */
-    .card-image {
-        flex: 0 0 150px;
-        width: 150px;
-        height: 150px;
+    .pic {
+        z-index: 3;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
     }
 
-    .card-image img {
+    .card-right {
+        width: 300px;
+        height: 200px;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .card-item-box h2 {
+        font-size: 35px;
+        font-weight: 700;
+        color: #000;
+    }
+
+    .card-about {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+
+    .card-about p {
+        color: #333;
+        opacity: 0.7;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    /* 既存の装飾用擬似要素 */
+    .container .card:before,
+    .container .card:after {
+        content: "";
+        z-index: 4;
+        position: absolute;
+        display: block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #ebebeb;
+    }
+
+    .container .card:before {
+        top: -10px;
+        left: 193px;
+    }
+
+    .container .card:after {
+        bottom: -10px;
+        left: 193px;
+    }
+
+    /* ドットリスト */
+    .container .card .ul {
+        z-index: 2;
+        position: absolute;
+        left: 200px;
+        top: 5px;
+        list-style-type: none;
+    }
+
+    .container .card .ul .li {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        margin: 6px 0;
+        background-color: #ebebeb;
+    }
+}
+
+/* ----- 1100px 未満（縦並びカードデザイン） ----- */
+@media (max-width: 1099px) {
+
+    /* 横並びのグリッド（例として、デフォルトで2列、さらに広い場合は3列） */
+    .e-eventbox-f {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 800px) {
+        .e-eventbox-f {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .container {
         width: 100%;
-        height: 100%;
+        margin: 0 auto;
+    }
+
+    .container .card {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        background-color: #fff;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border-radius: 8px;
+        position: relative;
+    }
+
+    .side-r,
+    .side-l {
+        margin-top: -7px;
+        position: absolute;
+        content: "";
+        z-index: 4;
+        position: absolute;
+        display: block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #ebebeb;
+    }
+
+    .side-l {
+        left: -10px;
+    }
+
+    .side-r {
+        right: -10px;
+    }
+
+    /* カード内部を縦並びに */
+    .card-all {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 画像部分：正方形に */
+    .pic {
+        width: 100%;
+        max-height: 400px;
+        aspect-ratio: 1;
+        overflow: hidden;
+        margin-bottom: 1rem;
+    }
+
+    /* 右側のコンテンツは縦並びに変更 */
+    .card-right {
+        width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-item-box {
+        margin-bottom: 0.5rem;
+    }
+
+    .card-item-box h2 {
+        font-size: clamp(20px, 5vw, 35px);
+        font-weight: 700;
+        color: #000;
+        margin: 0;
+    }
+
+    .card-about {
+        /* カード下部に寄せる場合は、こちらで調整（例：マージン） */
+        margin-top: auto;
+    }
+
+    .card-about p {
+        color: #333;
+        opacity: 0.7;
+        font-size: clamp(10px, 2.5vw, 12px);
+        letter-spacing: 1px;
+        margin: 0.25rem 0;
+    }
+
+    /* ドットリストは必要に応じて下部またはカード外に配置 */
+    /* ドットリスト */
+    .dot {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container .card .ul {
+        position: absolute;
+        left: -15px;
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        z-index: 2;
+    }
+
+    .container .card .ul .li {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        /* ドットにするため円形に */
+        background-color: #ebebeb;
     }
 }
