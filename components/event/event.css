@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 100vh;
-    background-color: #ebebeb;
+    background-color: white;
 }
 
 .e-boxcontent {
@@ -115,25 +114,65 @@
     padding: 10px;
 }
 
-/* 外側コンテナ：画面中央に配置 */
+/* ----------------------- */
+/* 共通ベーススタイル */
+/* ----------------------- */
+
 .e-eventbox {
     display: flex;
     justify-content: center;
     padding: 20px;
-    background-color: #ebebeb;
+    background-color: #ffffff;
 }
 
-/* 初期のグリッドレイアウト（1100px 以上は従来の設定） */
 .e-eventbox-f {
     display: grid;
     gap: 1.5rem;
     width: 100%;
 }
 
-/* ----- 1100px 以上（横並びカードデザイン） ----- */
+/* .container .card の共通部分 */
+.container .card {
+    position: relative;
+    width: 100%;
+    background-color: #ffd984;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* 画像内のスタイル */
+.piceve {
+    display: block;
+    border-radius: 10px;
+}
+
+/* 装飾用疑似要素（.container .card 共通） */
+.container .card:before,
+.container .card:after {
+    content: "";
+    z-index: 4;
+    position: absolute;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+/* 共通：ul内のli */
+.container .card .ul .li {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+/* ----------------------- */
+/* 1100px 以上（横並びカードデザイン） */
+/* ----------------------- */
 @media (min-width: 1100px) {
 
-    /* 横並びのグリッド（例として、デフォルトで2列、さらに広い場合は3列） */
+    /* グリッドの列数 */
     .e-eventbox-f {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -153,44 +192,49 @@
         flex-direction: column;
     }
 
+    /* .container .card 固有 */
     .container .card {
-        position: relative;
-        width: 100%;
         height: 200px;
-        background-color: #fff;
-        overflow: hidden;
         margin-bottom: 4px;
-        border-radius: 8px;
     }
 
-    /* 横並びカード内部 */
     .card-all {
         width: 100%;
         display: flex;
         flex-direction: row;
     }
 
+    /* 画像部分：固定200px */
     .pic {
         z-index: 3;
-        width: 200px;
-        height: 200px;
+        flex: 0 0 200px;
+        padding: 1rem;
         overflow: hidden;
     }
 
     .card-right {
-        width: 300px;
-        height: 200px;
+        flex: 1;
         padding-left: 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
+        min-width: 0;
+    }
+
+    .card-item-box {
+        margin-top: 10px;
+        width: 100%;
+        min-width: 0;
     }
 
     .card-item-box h2 {
-        font-size: 35px;
+        font-size: 30px;
         font-weight: 700;
         color: #000;
+        white-space: normal;
+        line-break: anywhere;
+        word-break: break-word;
     }
 
     .card-about {
@@ -202,23 +246,11 @@
     .card-about p {
         color: #333;
         opacity: 0.7;
-        font-size: 12px;
+        font-size: 15px;
         letter-spacing: 1px;
     }
 
-    /* 既存の装飾用擬似要素 */
-    .container .card:before,
-    .container .card:after {
-        content: "";
-        z-index: 4;
-        position: absolute;
-        display: block;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background-color: #ebebeb;
-    }
-
+    /* 装飾用疑似要素位置 */
     .container .card:before {
         top: -10px;
         left: 193px;
@@ -239,18 +271,16 @@
     }
 
     .container .card .ul .li {
-        width: 3px;
-        height: 3px;
-        border-radius: 50%;
         margin: 6px 0;
-        background-color: #ebebeb;
     }
 }
 
-/* ----- 1100px 未満（縦並びカードデザイン） ----- */
+/* ----------------------- */
+/* 1100px 未満（縦並びカードデザイン） */
+/* ----------------------- */
 @media (max-width: 1099px) {
 
-    /* 横並びのグリッド（例として、デフォルトで2列、さらに広い場合は3列） */
+    /* グリッドの列数 */
     .e-eventbox-f {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -266,30 +296,25 @@
         margin: 0 auto;
     }
 
+    /* .container .card 固有 */
     .container .card {
-        width: 100%;
         max-width: 400px;
         height: auto;
-        background-color: #fff;
-        overflow: hidden;
         margin-bottom: 1rem;
         padding: 1rem;
-        border-radius: 8px;
-        position: relative;
     }
 
+    /* ※モバイル用の独自装飾要素（side-r, side-l） */
     .side-r,
     .side-l {
         margin-top: -7px;
         position: absolute;
-        content: "";
         z-index: 4;
-        position: absolute;
         display: block;
         width: 16px;
         height: 16px;
         border-radius: 50%;
-        background-color: #ebebeb;
+        background-color: #ffffff;
     }
 
     .side-l {
@@ -300,14 +325,12 @@
         right: -10px;
     }
 
-    /* カード内部を縦並びに */
     .card-all {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    /* 画像部分：正方形に */
     .pic {
         width: 100%;
         max-height: 400px;
@@ -316,7 +339,6 @@
         margin-bottom: 1rem;
     }
 
-    /* 右側のコンテンツは縦並びに変更 */
     .card-right {
         width: 100%;
         padding: 0;
@@ -325,34 +347,40 @@
     }
 
     .card-item-box {
-        margin-bottom: 0.5rem;
+        margin: 0.5rem 0;
+        width: 100%;
+        min-width: 0;
     }
 
     .card-item-box h2 {
-        font-size: clamp(20px, 5vw, 35px);
+        font-size: clamp(20px, 4vw, 25px);
         font-weight: 700;
         color: #000;
-        margin: 0;
+        white-space: normal;
+        line-break: anywhere;
+        word-break: break-word;
     }
 
     .card-about {
-        /* カード下部に寄せる場合は、こちらで調整（例：マージン） */
         margin-top: auto;
     }
 
     .card-about p {
         color: #333;
         opacity: 0.7;
-        font-size: clamp(10px, 2.5vw, 12px);
+        font-size: clamp(10px, 2.8vw, 15px);
         letter-spacing: 1px;
         margin: 0.25rem 0;
     }
 
-    /* ドットリストは必要に応じて下部またはカード外に配置 */
-    /* ドットリスト */
     .dot {
         width: 100%;
         overflow-x: hidden;
+    }
+
+    .container .card:before,
+    .container .card:after {
+        display: none;
     }
 
     .container .card .ul {
@@ -366,12 +394,108 @@
         margin: 0;
         z-index: 2;
     }
+}
 
-    .container .card .ul .li {
-        width: 3px;
-        height: 3px;
-        border-radius: 50%;
-        /* ドットにするため円形に */
-        background-color: #ebebeb;
+/* ----------------------- */
+/* 「該当項目なし」表示用 */
+/* ----------------------- */
+.nothing {
+    width: 100%;
+    height: 300px;
+    grid-column: 1 / -1;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leftnot,
+.rightnot {
+    position: relative;
+    background-color: #ffd984;
+    height: 200px;
+}
+
+.leftnot {
+    transform: rotate(-10deg);
+    width: 150px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.rightnot {
+    transform: rotate(7deg);
+    width: 350px;
+    margin: 15px 0 0 30px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.leftnot::before,
+.leftnot::after,
+.rightnot::before,
+.rightnot::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 16px;
+    height: 16px;
+    z-index: 4;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.leftnot::before {
+    top: -8px;
+    right: -8px;
+}
+
+.leftnot::after {
+    bottom: -8px;
+    right: -8px;
+}
+
+.rightnot::before {
+    top: -8px;
+    left: -8px;
+}
+
+.rightnot::after {
+    bottom: -8px;
+    left: -8px;
+}
+
+.leftnotbox {
+    height: 200px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.rightnotbox {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+}
+
+@media (max-width: 500px) {
+
+    .leftnot,
+    .rightnot {
+        height: 150px;
+    }
+
+    .leftnotbox {
+        height: 150px;
+        padding: 0.5rem;
+    }
+
+    .rightnotbox {
+        height: 150px;
     }
 }

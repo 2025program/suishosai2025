@@ -150,7 +150,7 @@ const EventPage: React.FC = () => {
                                         <div className="card-all">
                                             <div className="pic">
                                                 <Image
-                                                    className=""
+                                                    className="piceve"
                                                     src="/event/event.png"
                                                     alt="画像を読み込めませんでした"
                                                     width={1000}
@@ -181,7 +181,23 @@ const EventPage: React.FC = () => {
                                 </a>
                             ))
                         ) : (
-                            <p className="error-message">該当項目なし</p>
+                            <div className='nothing'>
+                                <div className="leftnot">
+                                    <div className="leftnotbox">
+                                        <Image
+                                            className="piceve"
+                                            src="/welcome/logopc.png"
+                                            alt="画像を読み込めませんでした"
+                                            width={1000}
+                                            height={1000}
+                                            priority
+                                        />
+                                    </div>
+                                </div>
+                                <div className='rightnot'>
+                                    <div className="rightnotbox">該当項目はありません</div>
+                                </div>
+                            </div>
                         )}
                     </div>
                 </div>
