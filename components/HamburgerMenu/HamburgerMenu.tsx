@@ -108,16 +108,16 @@ const HamburgerMenu: React.FC = () => {
                                                 <a href="/event">・イベント一覧</a>
                                             </li>
                                             <li className="fusion-dropdown-item">
-                                                <a href="/event?id=全日">・全日制</a>
+                                                <a href="/event?id=全日制">・全日制</a>
                                             </li>
                                             <li className="fusion-dropdown-item">
-                                                <a href="/event?id=食販">・食品販売</a>
+                                                <a href="/event?id=食品販売">・食品販売</a>
                                             </li>
                                             <li className="fusion-dropdown-item">
                                                 <a href="/event?id=ステージ">・ステージ</a>
                                             </li>
                                             <li className="fusion-dropdown-item">
-                                                <a href="/event?id=定時">・定時制</a>
+                                                <a href="/event?id=定時制">・定時制</a>
                                             </li>
                                         </ul>
                                     </li>

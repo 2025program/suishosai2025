@@ -10,10 +10,10 @@ import "./event.css"
 
 // 固定の属性候補（フィルター表示用）
 const fixedAttributes: { icon: LucideIcon; title: string }[] = [
-    { icon: Sun, title: "全日" },
-    { icon: Soup, title: "食販" },
+    { icon: Sun, title: "全日制" },
+    { icon: Soup, title: "食品販売" },
     { icon: Drum, title: "ステージ" },
-    { icon: Moon, title: "定時" },
+    { icon: Moon, title: "定時制" },
 ];
 
 const EventPage: React.FC = () => {
@@ -111,7 +111,6 @@ const EventPage: React.FC = () => {
 
             {/* メインコンテンツ */}
             <section className="e-content">
-                {/* 検索バー */}
                 <div className="e-search">
                     <label htmlFor="search" className="sr-only">
                         イベント検索
@@ -124,9 +123,13 @@ const EventPage: React.FC = () => {
                         placeholder="イベントを検索..."
                         className="e-searchbox"
                     />
+                    {searchTerm && (
+                        <button className="e-clear" onClick={() => setSearchTerm('')}>
+                            ×
+                        </button>
+                    )}
                 </div>
 
-                {/* アイコンフィルター */}
                 <div className="e-iconbox">
                     {iconTypes.map((IconComponent, index) => (
                         <button
