@@ -40,24 +40,38 @@ export default function Stuff() {
                 </h1>
             </header>
 
-            <section className="absui">
+            <section className="mb-6">
                 <h2 className="text-xl mb-2">翠翔祭について</h2>
-                <a className="h3">翠翔祭とは毎年6月末に行われる神奈川県立横浜翠嵐高校の文化祭です。コロナの年度は一般公開できなかったものの、去年から一般公開を再開し、約１万人の方々に来場いただきました。来場お待ちしております。</a>
+                <a className="bun">翠翔祭とは毎年6月末に行われる神奈川県立横浜翠嵐高校の文化祭です。コロナの年度は一般公開できなかったものの、去年から一般公開を再開し、約１万人の方々に来場いただきました。来場お待ちしております。</a>
             </section>
 
-            <section className="zenniti">
-                <h2 className="text-xl mb-2">2025年度全日制翠翔祭実行委員長　池田晴彦</h2>
-                <a className="h3">ありがたいお言葉</a>
+            <div className="container">
+            <section className="sent">
+                <h2 className="text-xl mb-2">2025年度全日制翠翔祭実行委員長</h2>
+                <h3 className="text-xl mb-2">池田晴彦</h3>
+                <a className="bun">ありがたいお言葉</a>
             </section>
 
-            <section className="teiji">
-                <h2 className="text-xl mb-2">2025年度定時制翠翔祭実行委員長　？？？？</h2>
-                <a className="h3">ありがたいお言葉</a>
+            <section className="sent">
+                <h2 className="text-xl mb-2">2025年度定時制翠翔祭実行委員長</h2>
+                <h3 className="text-xl mb-2">？？？？</h3>
+                <a className="bun">ありがたいお言葉</a>
             </section>
+            </div>
+            
 
+            
 
-
-            <section className="member">
+            <div className="members">
+                <picture className="member-picture">
+                    <Image
+                   src="/member.png"
+                   alt=""
+                   width={3000}
+                   height={1000}
+                    />
+                </picture>
+                <section>
                 <h2 className="text-xl mb-2">翠翔祭実行委員会総務部紹介</h2>
                 <h3 className="h3">| 実行委員長</h3>
                 <a className="member-name">　池田晴彦</a>
@@ -75,9 +89,11 @@ export default function Stuff() {
                 <a className="member-name">　𠮷岡太郎</a>
                 <h3 className="h3">| 後夜祭・ステージ部統括責任者</h3>
                 <a className="member-name">　富永恵未</a>
-            </section>
+                </section>
+                
+            </div>
 
-            <section className="editor">
+            <section className="mb-6">
                 <h2 className="text-xl mb-2" >ウェブサイト開発</h2>
                 <a className="member-name">Pent &#40;横浜翠嵐所属&#41;</a>
                 <a className="member-name">水谷駿佑 &#40;横浜翠嵐所属&#41;</a>

@@ -96,20 +96,44 @@ okなやつ
     }
 }
 
-.absui {
-    margin-top: 30px;
+.member-picture{
+    margin : 30px;
 }
 
-.zenniti {
-    margin-top: 30px;
+/*委員長の言葉で全日と定時をｐｃの時に横並びにする*/
+@media(min-width: 768px){
+    .container{
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+
+    }
+
+    .sent{
+        width: 50%;
+        padding: 30px;
+    }
 }
 
-.teiji {
-    margin-top: 30px;
+/*pcの時メンバー名と写真の横並び*/
+@media(min-width: 768px){
+    .members{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+    }
+
+    .member-picture{
+        width: 50%;
+    }
 }
 
-.member {
-    margin-top: 30px;
+.members{
+    margin-bottom: 6px;
+}
+
+.sent{
+    margin-bottom: 6px;
 }
 
 .editor {
@@ -123,3 +147,9 @@ okなやつ
 .h3 {
     font-size: 18px;
 }
+
+.bun{
+    font-size: 18px;
+    padding: 19px;
+}
+
