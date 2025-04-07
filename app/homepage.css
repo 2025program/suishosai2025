@@ -14,53 +14,56 @@
 }
 
 .newsbox {
-    margin-top: 0;
     position: relative;
-    z-index: 3
+    z-index: 3;
+    background-color: #ffffff;
+}
+
+.newsbox-up {
+    background-color: #008dff;
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.newsbox-up-sp {
+    display: block;
+}
+
+.newsbox-animation {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    -webkit-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+    margin-top: 8vw;
+}
+
+@media (max-width: 767px) {
+    .newsbox-animation {
+        z-index: 5;
+        -webkit-transform: rotate(1deg);
+        transform: rotate(1deg);
+        margin-top: 11vw;
+    }
+
+    .newsbox-up {
+        background-color: #ffffff;
+    }
 }
 
 .newsbox-newstag {
     position: absolute;
     left: -25px;
-    top: -20px;
+    top: 0px;
     height: clamp(10px, 25vw, 160px);
     min-height: 110px;
     width: auto;
-    z-index: 5;
+    z-index: 7;
     -webkit-transform: rotate(5deg);
     transform: rotate(5deg);
-}
-
-.newsbox-up {
-    background-color: #4daaff;
-    pointer-events: none;
-    width: 100%;
-    height: 25vw;
-    min-height: 120px;
-}
-
-.newsbox-up:before {
-    background-color: #4daaff;
-    content: "";
-    display: block;
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
-    width: 100%;
-}
-
-.newsbox-up-sp {
-    left: 0;
-    position: absolute;
-    top: 1px;
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%)
-}
-
-.newsbox-animation {
-    position: absolute;
-    top: 10vw;
-    -webkit-transform: rotate(2deg);
-    transform: rotate(2deg);
 }
 
 /* お知らせコンテンツ */
@@ -68,7 +71,6 @@
     width: 100%;
     padding-top: 30px;
     padding-bottom: 30px;
-    background-color: #4daaff;
     display: flex;
     justify-content: center;
     /* 中央寄せ */
@@ -82,7 +84,6 @@
     overflow-y: auto;
     padding: 15px;
     border-radius: 15px;
-    background-color: #64b4ff;
 }
 
 /* 各ニュース項目の親（中央寄せ用） */
@@ -405,11 +406,9 @@
 }
 
 .headtop-leftarea {
-    height: 100%;
     position: absolute;
     width: 100%;
-    z-index: 2;
-    overflow-y: hidden;
+    z-index: -1;
 }
 
 .headtop-textanimation {
@@ -457,24 +456,10 @@
 }
 
 .hidden-x-side {
-    overflow-x: hidden
+    overflow-x: hidden;
 }
 
 @media (min-width:768px) {
-    .newsbox-up {
-        overflow: hidden;
-        height: 20vw;
-        max-height: 300px;
-    }
-
-    .newsbox-up:before {
-        display: none
-    }
-
-    .newsbox-up-sp {
-        display: block
-    }
-
     .newsbox-newstag {
         left: -40px;
         top: 10px;
@@ -487,12 +472,6 @@
         top: 1vw;
         height: 18vw;
         max-height: 250px;
-    }
-
-    .newsbox-animation {
-        -webkit-transform: rotate(-1deg);
-        transform: rotate(-1deg);
-        top: clamp(65px, 5vw, 90px);
     }
 
     .footbox-foottag {
@@ -525,7 +504,6 @@
         padding-bottom: 0;
         padding-left: 0;
         padding-top: 0;
-        max-height: 110vh;
         overflow-y: hidden;
     }
 

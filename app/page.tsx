@@ -130,20 +130,23 @@ const Home: React.FC = () => {
 
             <section className="newsbox">
               <div className="newsbox-up">
-                <picture>
-                  <source
-                    media="(min-width:768px)"
-                    srcSet="/welcome/newscover.png"
-                  />
-                  <Image
-                    className="newsbox-up-sp img"
-                    src="/welcome/newscoversp.png"
-                    alt=""
-                    width={2000}
-                    height={500}
-                    priority
-                  />
-                </picture>
+
+                <div className='titlecover'>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcSet="/welcome/newscover.png"
+                    />
+                    <Image
+                      className="newsbox-up-sp img"
+                      src="/welcome/newscoversp.png"
+                      alt=""
+                      width={3000}
+                      height={1000}
+                      priority
+                    />
+                  </picture>
+                </div>
 
                 <Image
                   className="newsbox-newstag img"
