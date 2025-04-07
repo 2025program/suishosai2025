@@ -51,7 +51,7 @@ export default function RootLayout({
           <main>
             {children}
           </main>
-          <CookieConsent />
+          {/* <CookieConsent /> */}
         </body>
       </html>
     );

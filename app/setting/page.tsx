@@ -24,7 +24,7 @@ const Settings: React.FC = () => {
 
     return (
         <div className="p-8">
-            <h1 className="text-2xl mb-4">クッキー設定</h1>
+            <h1 className="text-2xl mb-4">クッキー設定 (現在このページは使用されていません。ブラウザバックしてください。)</h1>
             <h1 className="text-xl mb-4">クッキーのご利用について</h1>
             <p>当サイトでは、以下の目的でクッキーを使用しております：</p>
             <p>1.クッキー同意状態の保持</p>
