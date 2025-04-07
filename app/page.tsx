@@ -133,11 +133,11 @@ const Home: React.FC = () => {
                 <picture>
                   <source
                     media="(min-width:768px)"
-                    srcSet="/welcome/footer_mask_pc.png"
+                    srcSet="/welcome/newscover.png"
                   />
                   <Image
                     className="newsbox-up-sp img"
-                    src="/welcome/footer_mask_sp.png"
+                    src="/welcome/newscoversp.png"
                     alt=""
                     width={2000}
                     height={500}

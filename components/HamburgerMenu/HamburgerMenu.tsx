@@ -54,9 +54,6 @@ const HamburgerMenu: React.FC = () => {
                                     <li className="fusion-item">
                                         <a href="/about">ABOUT</a>
                                     </li>
-                                    <li className="fusion-item">
-                                        <a href="/attention">RULE</a>
-                                    </li>
                                 </ul>
                             </div>
                         </div>

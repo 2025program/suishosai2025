@@ -23,7 +23,7 @@
     position: absolute;
     left: -25px;
     top: -20px;
-    height: 28vw;
+    height: clamp(10px, 25vw, 160px);
     min-height: 110px;
     width: auto;
     z-index: 5;
@@ -58,7 +58,7 @@
 
 .newsbox-animation {
     position: absolute;
-    top: 3.75rem;
+    top: 10vw;
     -webkit-transform: rotate(2deg);
     transform: rotate(2deg);
 }
@@ -182,9 +182,9 @@
     position: absolute;
     top: 0;
     z-index: 1;
-    -webkit-transform: rotate(-3deg);
-    transform: rotate(-3deg);
-    margin-top: 1rem;
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+    margin-top: clamp(20px, 10vw, 150px);
 }
 
 @media (max-width: 767px) {
@@ -192,12 +192,12 @@
         z-index: 5;
         -webkit-transform: rotate(-2deg);
         transform: rotate(-2deg);
-        margin-top: 0rem;
+        margin-top: 1rem;
     }
 
     .mapbox-up {
-        background: rgb(71, 170, 255);
-        background: linear-gradient(180deg, rgba(77, 170, 255, 1) 43%, rgba(227, 227, 227, 1) 57%);
+        background: rgb(255, 0, 0);
+        background: linear-gradient(180deg, rgba(255, 0, 0, 1) 43%, rgb(255, 255, 255) 57%);
     }
 }
 
@@ -205,7 +205,7 @@
     position: absolute;
     left: -25px;
     top: 0px;
-    height: 28vw;
+    height: clamp(10px, 25vw, 160px);
     min-height: 110px;
     width: auto;
     z-index: 7;
@@ -218,7 +218,7 @@
     flex-direction: column;
     align-items: center;
     height: auto;
-    background-color: #e3e3e3;
+    background-color: #ffffff;
 }
 
 .adbox {
@@ -258,8 +258,8 @@
     top: 0;
     z-index: 1;
     -webkit-transform: rotate(-4deg);
-    transform: rotate(-4rem);
-    margin-top: 10vw;
+    transform: rotate(-4deg);
+    top: clamp(40px, 5vw, 90px);
 }
 
 @media (max-width: 767px) {
@@ -267,20 +267,18 @@
         z-index: 5;
         -webkit-transform: rotate(-2deg);
         transform: rotate(-2deg);
-        margin-top: 0rem;
     }
 
     .footbox-up {
-        background: rgb(227, 227, 227);
-        background: linear-gradient(180deg, rgba(227, 227, 227, 1) 43%, rgba(255, 255, 255, 1) 57%);
+        background: white;
     }
 }
 
 .footbox-foottag {
     position: absolute;
     left: -25px;
-    top: 0px;
-    height: 28vw;
+    top: 3.5vw;
+    height: clamp(10px, 25vw, 160px);
     min-height: 110px;
     width: auto;
     z-index: 7;
@@ -337,7 +335,7 @@
 }
 
 .imageanimation.hgt .imageanimation-png {
-    height: 17.3vw
+    height: 12vw
 }
 
 @-webkit-keyframes loop {
@@ -486,25 +484,27 @@
 
     .charmbox-charmtag {
         left: -40px;
-        top: 0;
+        top: 1vw;
         height: 18vw;
         max-height: 250px;
     }
 
     .newsbox-animation {
         -webkit-transform: rotate(-1deg);
-        transform: rotate(-1deg)
+        transform: rotate(-1deg);
+        top: clamp(65px, 5vw, 90px);
     }
 
     .footbox-foottag {
         left: -40px;
-        top: 10vw;
+        top: 1vw;
         height: 18vw;
         max-height: 250px;
     }
 
     .imageanimation.hgt .imageanimation-png {
-        height: 7.4vw
+        height: 6vw;
+        max-height: 100px;
     }
 
     .headtop:after {

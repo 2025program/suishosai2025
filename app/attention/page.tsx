@@ -2,7 +2,7 @@ const Attention: React.FC = () => {
     return (
         <main className="p-8">
             <header className="mb-6">
-                <h1 className="text-2xl">注意事項</h1>
+                <h1 className="text-2xl">注意事項(現在使用されていません)</h1>
             </header>
 
             <section className="mb-6">
