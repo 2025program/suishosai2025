@@ -264,9 +264,9 @@
     position: absolute;
     top: 0;
     z-index: 1;
-    -webkit-transform: rotate(-4deg);
-    transform: rotate(-4deg);
-    top: clamp(40px, 5vw, 90px);
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+    top: clamp(40px, 8vw, 150px);
 }
 
 @media (max-width: 767px) {

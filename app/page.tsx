@@ -7,6 +7,7 @@ import { supabase } from '@/utils/supabase/supabase';
 import { Database } from '@/types/database';
 import { Yusei_Magic } from "next/font/google";
 import Charm from '@/components/charm/charm';
+import About_ft from '@/components/about/about_ft';
 const yusei = Yusei_Magic({ weight: "400", subsets: ["latin"] });
 
 function formatDate(dateStr: string | null): string {
@@ -280,7 +281,7 @@ const Home: React.FC = () => {
                   </div>
                 </div>
               </div>
-
+              {/** 魅力コンテンツ */}
               <Charm />
             </section>
 
@@ -348,10 +349,8 @@ const Home: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="itemfoot">
-                概要コンテンツ アクセスやシェアボタンなど
-                <p>アンケートにご協力ください</p>
-              </div>
+              {/** 魅力コンテンツ */}
+              <About_ft />
             </section>
           </div>
         </main>
