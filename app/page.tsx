@@ -6,6 +6,7 @@ import "./homepage.css"
 import { supabase } from '@/utils/supabase/supabase';
 import { Database } from '@/types/database';
 import { Yusei_Magic } from "next/font/google";
+import Charm from '@/components/charm/charm';
 const yusei = Yusei_Magic({ weight: "400", subsets: ["latin"] });
 
 function formatDate(dateStr: string | null): string {
@@ -61,8 +62,8 @@ const Home: React.FC = () => {
                           className="imageanimation-png img"
                           src="/welcome/title.png"
                           alt=""
-                          width={800}
-                          height={200}
+                          width={172}
+                          height={2636}
                           priority
                         />
                       </div>
@@ -71,8 +72,8 @@ const Home: React.FC = () => {
                           className="imageanimation-png img"
                           src="/welcome/title.png"
                           alt=""
-                          width={800}
-                          height={200}
+                          width={172}
+                          height={2636}
                           priority
                         />
                       </div>
@@ -88,8 +89,8 @@ const Home: React.FC = () => {
                         className="headtop-logo-sp img"
                         src="/welcome/logosp.png"
                         alt=""
-                        width={497}
-                        height={427}
+                        width={831}
+                        height={714}
                         priority
                       />
                     </picture>
@@ -104,8 +105,8 @@ const Home: React.FC = () => {
                         className="headtop-change-sp img"
                         src="/welcome/themesp.png"
                         alt="neo"
-                        width={594}
-                        height={197}
+                        width={180}
+                        height={1164}
                         priority
                       />
                     </picture>
@@ -154,8 +155,8 @@ const Home: React.FC = () => {
                   className="newsbox-newstag img"
                   src="/welcome/newstag.png"
                   alt=""
-                  width={400}
-                  height={200}
+                  width={800}
+                  height={400}
                   priority
                 />
 
@@ -170,8 +171,8 @@ const Home: React.FC = () => {
                           className="imageanimation-png"
                           src="/welcome/title_news.png"
                           alt=""
-                          width={2384}
-                          height={150}
+                          width={4790}
+                          height={300}
                           loading="lazy"
                         />
                       </picture>
@@ -185,8 +186,8 @@ const Home: React.FC = () => {
                           className="imageanimation-png"
                           src="/welcome/title_news.png"
                           alt=""
-                          width={2384}
-                          height={150}
+                          width={4790}
+                          height={300}
                           loading="lazy"
                         />
                       </picture>
@@ -239,8 +240,8 @@ const Home: React.FC = () => {
                   className="charmbox-charmtag img"
                   src="/welcome/charmtag.png"
                   alt=""
-                  width={400}
-                  height={200}
+                  width={800}
+                  height={400}
                   priority
                 />
 
@@ -255,8 +256,8 @@ const Home: React.FC = () => {
                           className="imageanimation-png"
                           src="/welcome/title_map.png"
                           alt=""
-                          width={2384}
-                          height={150}
+                          width={4790}
+                          height={300}
                           loading="lazy"
                         />
                       </picture>
@@ -270,8 +271,8 @@ const Home: React.FC = () => {
                           className="imageanimation-png"
                           src="/welcome/title_map.png"
                           alt=""
-                          width={2384}
-                          height={150}
+                          width={4790}
+                          height={300}
                           loading="lazy"
                         />
                       </picture>
@@ -279,19 +280,8 @@ const Home: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="itemcharm">
-                <p>めちゃくちゃ適当に書いた広告</p>
-                <a href='/map' className="adbox">
-                  <Image
-                    className="ad"
-                    src="/topad/mapad.png"
-                    alt="hi"
-                    width={800}
-                    height={577}
-                    loading="lazy"
-                  />
-                </a>
-              </div>
+
+              <Charm />
             </section>
 
             <section className='foot'>
@@ -318,8 +308,8 @@ const Home: React.FC = () => {
                   className="footbox-foottag img"
                   src="/welcome/abouttag.png"
                   alt=""
-                  width={400}
-                  height={200}
+                  width={800}
+                  height={400}
                   priority
                 />
 
@@ -334,8 +324,8 @@ const Home: React.FC = () => {
                           className="imageanimation-png"
                           src="/welcome/title_about.png"
                           alt=""
-                          width={2384}
-                          height={150}
+                          width={4790}
+                          height={300}
                           loading="lazy"
                         />
                       </picture>
@@ -349,8 +339,8 @@ const Home: React.FC = () => {
                           className="imageanimation-png"
                           src="/welcome/title_about.png"
                           alt=""
-                          width={2384}
-                          height={150}
+                          width={4790}
+                          height={300}
                           loading="lazy"
                         />
                       </picture>
