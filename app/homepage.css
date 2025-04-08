@@ -81,35 +81,35 @@
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    background: #104300;
     margin: 1em 0;
     padding: 0em 1em 0 1em;
-    border: 8px solid #a60;
-    box-shadow: 2px 2px 4px #999, 2px 2px 2px #020 inset;
+}
+
+.blackboard-box::before {
+    z-index: 7;
+    position: absolute;
+    right: 1em;
+    content: "";
+    width: 20vw;
+    height: 20vw;
+    border-top: 2px dashed #000;
+    border-right: 2px dashed #000;
+}
+
+.blackboard-box::after {
+    z-index: 7;
+    position: absolute;
+    left: 1em;
+    bottom: 1em;
+    content: "";
+    width: 20vw;
+    height: 20vw;
+    border-bottom: 2px dashed #000;
+    border-left: 2px dashed #000;
 }
 
 .blackboard-box::-webkit-scrollbar {
     display: none;
-}
-
-.chalk1 {
-    display: block;
-    margin-top: 10px;
-    margin-left: 90%;
-    border: solid 3px #fff;
-    width: 25px;
-    height: 6px;
-    border-radius: 3px 2px 0 2px;
-}
-
-.chalk2 {
-    display: block;
-    margin-top: -6px;
-    margin-left: calc(90% - 30px);
-    border: solid 3px #ffee58;
-    width: 20px;
-    height: 6px;
-    border-radius: 3px 2px 0 2px;
 }
 
 .box-010 {

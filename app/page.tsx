@@ -211,8 +211,6 @@ const Home: React.FC = () => {
                       </div>
                     ))
                   }
-                  <div className="chalk1"></div>
-                  <div className="chalk2"></div>
                 </div>
               </div>
             </section>
