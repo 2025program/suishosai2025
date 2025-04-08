@@ -82,7 +82,7 @@
     scrollbar-width: none;
     background: #104300;
     margin: 1em 0;
-    padding: 1em 1em 0 1em;
+    padding: 0em 1em 0 1em;
     border: 8px solid #a60;
     box-shadow: 2px 2px 4px #999, 2px 2px 2px #020 inset;
 }
@@ -150,8 +150,14 @@
 }
 
 @media (max-width: 767px) {
+
     .box-010 {
         width: 100%;
+    }
+
+    .blackboard-box {
+        width: 93%;
+        max-height: 75vh;
     }
 }
 
