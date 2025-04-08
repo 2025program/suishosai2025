@@ -171,11 +171,11 @@ export default function AnnouncementManager() {
                                         <textarea name="content" required className="w-full p-2 border rounded" />
                                     </div>
                                     <div className="md:col-span-2">
-                                        <Label>リンクのタイトル</Label>
+                                        <Label>リンクのタイトル(指定しなくてよい)</Label>
                                         <textarea name="details" className="w-full p-2 border rounded" />
                                     </div>
                                     <div className="md:col-span-2">
-                                        <Label>リンク /を一番最初に含めることを推奨</Label>
+                                        <Label>リンク (指定しなくてよい)</Label>
                                         <Input type="text" name="link" />
                                     </div>
                                 </div>
@@ -226,7 +226,7 @@ export default function AnnouncementManager() {
                                             />
                                         </div>
                                         <div className="md:col-span-2">
-                                            <Label>リンクのタイトル</Label>
+                                            <Label>リンクのタイトル(指定しなくてよい)</Label>
                                             <textarea
                                                 name="details"
                                                 defaultValue={editingAnnouncement.details}
@@ -234,7 +234,7 @@ export default function AnnouncementManager() {
                                             />
                                         </div>
                                         <div className="md:col-span-2">
-                                            <Label>リンク /を一番最初に含めることを推奨</Label>
+                                            <Label>リンク(指定しなくてよい)</Label>
                                             <Input
                                                 type="text"
                                                 name="link"

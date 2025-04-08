@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Noto_Sans_JP } from "next/font/google";
-import { CookieConsent } from "@/components/CookieConsent";
+//import { CookieConsent } from "@/components/CookieConsent";
 import HamburgerMenu from "@/components/HamburgerMenu/HamburgerMenu";
 import Countdown from "@/components/countdown/countdown";
 

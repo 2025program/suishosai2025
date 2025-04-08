@@ -5,6 +5,8 @@ import React, { useEffect, useState } from 'react';
 import "./homepage.css"
 import { supabase } from '@/utils/supabase/supabase';
 import { Database } from '@/types/database';
+import { Yusei_Magic } from "next/font/google";
+const yusei = Yusei_Magic({ weight: "400", subsets: ["latin"] });
 
 function formatDate(dateStr: string | null): string {
   if (!dateStr) return "";
@@ -193,26 +195,22 @@ const Home: React.FC = () => {
                 </div>
               </div>
 
-              <div className="newsbox-content">
-                <div className="news-scroll-container">
-                  {loading && <p>お知らせを取得中</p>}
+              <div className="announce">
+                <div className="blackboard-box">
+                  {loading && <p>お知らせを取得中…</p>}
                   {!loading && announcements.length === 0 && <p>お知らせはありませんでした</p>}
-                  {announcements.map((announcement) => (
-                    <div key={announcement.id} className="boxkey">
-                      <div className="news-item">
-                        <h3 className="news-item-title">{announcement.title}</h3>
-                        <div className="news-item-row">
-                          <div className="news-item-time">
-                            {formatDate(announcement.created_at)}
-                          </div>
-                          <div className="news-item-body">
-                            <p>{announcement.content}</p>
-                          </div>
-                        </div>
+                  {!loading &&
+                    announcements.map((announcement) => (
+                      <div key={announcement.id} className="box-010">
+                        <span className={yusei.className}>{announcement.headline!}</span>
+                        <h1>{announcement.title!}</h1>
+                        <p>{announcement.content!}</p>
+                        <p className='tets'>{formatDate(announcement.created_at!)}</p>
                       </div>
-                      <div className="news-divider"></div>
-                    </div>
-                  ))}
+                    ))
+                  }
+                  <div className="chalk1"></div>
+                  <div className="chalk2"></div>
                 </div>
               </div>
             </section>
