@@ -94,6 +94,16 @@ export default function Home() {
               </div>
             </section>
 
+            <section>
+              <img
+                  src=''
+                  alt=''
+                />
+              <h1>お会計は電子マネーのみです</h1>
+              <h2>現金・プリペイドカードなどは使えません</h2>
+              <h3>チャージ機はございませんので、駅などで十分にチャージしてきてください</h3>
+              </section>
+
             {/** マップ */}
             <section className='headbox'>
               <div className="mapbox-up box-up">

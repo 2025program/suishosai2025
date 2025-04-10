@@ -1,0 +1,55 @@
+.topsearch{
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.to{
+    width: 300px;
+    height: 130px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    border-style: 2px solid;
+    border-radius: 20px;
+    background-color: aqua;
+    border-color: deeppink;
+}
+
+.imgs{
+    padding: 20px;
+}
+
+.way{
+    padding: 20px;
+}
+
+@media(max-width: 768px){
+    .topsearch{
+        margin: 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .to-search{
+        width: 600px;
+        height: 130px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .to-map{
+        width: 600px;
+        height: 130px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .to-timetable{
+        width: 600px;
+        height: 130px;
+        display: flex;
+        align-items: center;
+    }
+}
+    
