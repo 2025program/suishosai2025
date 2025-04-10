@@ -5,7 +5,9 @@ export default function Form() {
     return (
         <>
             <div className="form">
-                フォームコンテンツ ※画像未定
+                <div className="form_poll">
+                    実験的内容
+                </div>
             </div>
         </>
     );
