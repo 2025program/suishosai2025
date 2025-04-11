@@ -39,7 +39,7 @@ export default function Form() {
                                     <div className="side-r"></div>
                                     <div className="side-l"></div>
                                     <ul className='ul'>
-                                        {Array.from({ length: 10 }).map((_, index) => (
+                                        {Array.from({ length: 13 }).map((_, index) => (
                                             <li key={index} className='li'></li>
                                         ))}
                                     </ul>
