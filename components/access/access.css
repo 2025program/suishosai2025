@@ -1,0 +1,19 @@
+.access {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.access h1 {
+    font-size: clamp(25px, 3vw, 50px);
+    margin-bottom: 20px;
+}
+
+.map-ab {
+    width: 90%;
+    max-width: 800px;
+    height: 300px;
+}
