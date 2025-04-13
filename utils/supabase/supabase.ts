@@ -1,6 +1,5 @@
 // src/lib/supabaseClient.ts
 import { createBrowserClient } from "@supabase/ssr";
-// 生成された型定義（例: src/types/database.ts）から Database 型をインポート
 import { Database } from "@/types/database";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;

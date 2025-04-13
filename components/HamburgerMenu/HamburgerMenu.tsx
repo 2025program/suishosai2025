@@ -6,7 +6,9 @@ import './HamburgerMenu.css';
 
 const HamburgerMenu: React.FC = () => {
     const [isActive, setIsActive] = useState(false);
+    const [isDev, setIsDev] = useState(false);
 
+    // メニューが開いている場合は body のスクロールを固定
     useEffect(() => {
         document.body.style.overflow = isActive ? 'hidden' : '';
         return () => {
@@ -15,6 +17,21 @@ const HamburgerMenu: React.FC = () => {
     }, [isActive]);
 
     const toggleMenu = () => setIsActive(!isActive);
+
+    // コンポーネントマウント時に /api/dev-mode エンドポイントから dev_mode の状態を取得
+    useEffect(() => {
+        async function fetchDevMode() {
+            const res = await fetch("/api/dev-mode");
+            if (res.ok) {
+                const data = await res.json();
+                setIsDev(data.isDevMode);
+            } else {
+                console.error("dev_mode の取得に失敗しました");
+                setIsDev(false);
+            }
+        }
+        fetchDevMode();
+    }, []);
 
     return (
         <div className="fusion-container">
@@ -54,6 +71,11 @@ const HamburgerMenu: React.FC = () => {
                                     <li className="fusion-item">
                                         <a href="/about">ABOUT</a>
                                     </li>
+                                    {isDev && (
+                                        <li className="fusion-item">
+                                            <a href="/admin/login">DASHBOARD</a>
+                                        </li>
+                                    )}
                                 </ul>
                             </div>
                         </div>

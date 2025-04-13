@@ -3,6 +3,8 @@ import { useEffect, useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import AnnouncementManager from './AnnouncementManager'
 import StatusManager from './StatusManager'
+import DevSwitch from "@/components/developer/developer";
+import { supabase } from '@/utils/supabase/supabase'
 
 // 既存のお知らせ型
 export type Announcement = {
@@ -20,6 +22,12 @@ export type StatusItem = {
     id: number
     name: string
     status: string
+}
+
+// プロフィール型（開発者判定で利用）
+export type Developer = {
+    id: string
+    role: string | null
 }
 
 /** 前回の値を返すカスタムフック */
@@ -78,7 +86,7 @@ const getVariants = (
     current: 'announcement' | 'status',
     previous: 'announcement' | 'status'
 ) => {
-    // ステータス → お知らせ の場合（前が status, 今が announcement）
+    // ステータス → お知らせ の場合
     if (current === 'announcement' && previous === 'status') {
         return {
             initial: { opacity: 0, x: 20 },
@@ -86,7 +94,7 @@ const getVariants = (
             exit: { opacity: 0, x: 20 }
         }
     }
-    // お知らせ → ステータス の場合（前が announcement, 今が status）
+    // お知らせ → ステータス の場合
     else if (current === 'status' && previous === 'announcement') {
         return {
             initial: { opacity: 0, x: -20 },
@@ -107,11 +115,42 @@ export default function DashboardClient() {
     // 前回のタブ状態を保持するカスタムフック
     const prevTab = usePrevious(activeTab)
 
+    // 現在のユーザーのプロファイルを取得
+    const [developer, setDeveloper] = useState<Developer | null>(null)
+
+    useEffect(() => {
+        async function fetchDeveloper() {
+            // supabase の認証から現在のユーザー情報を取得（利用している認証方法に合わせて調整）
+            const { data: { user } } = await supabase.auth.getUser()
+
+            if (!user?.id) return
+
+            const { data, error } = await supabase
+                .from('profiles')
+                .select('id, role')
+                .eq('id', user.id)
+                .single()
+
+            if (error) {
+                console.error('Failed to fetch profile:', error)
+            } else if (data) {
+                setDeveloper(data as Developer)
+            }
+        }
+        fetchDeveloper()
+    }, [])
+
     return (
         <div className="p-6">
+            {/* developer 権限のあるユーザーのみ、DevSwitch（開発者向けスイッチ）を表示 */}
+            {developer?.role === 'developer' && (
+                <div className="mb-6">
+                    <DevSwitch />
+                </div>
+            )}
             <h1 className="text-3xl font-bold mb-6">ダッシュボード</h1>
 
-            {/* スイッチ型のタブ切り替え */}
+            {/* タブ切り替え用スイッチ */}
             <div className="mb-6">
                 <ToggleSwitch activeTab={activeTab} setActiveTab={setActiveTab} />
             </div>
