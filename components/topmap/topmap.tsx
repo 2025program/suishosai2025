@@ -8,7 +8,10 @@ export default function Topmap() {
             <div className="topsearch">
                 <div className="topsearch_event">
                     <a href="/event" className="search_event">
-                        イベント検索
+                        <div className="title-top">
+                            イベント検索
+                        </div>
+
                         <Image
                             className="top_event_icon"
                             src="/topsearch/search.svg"
@@ -23,7 +26,9 @@ export default function Topmap() {
                 <div className="bottom_search">
                     <div className="bottom_grid">
                         <a href="/map" className="first_search">
-                            学校マップ
+                            <div className="title-top">
+                                学校マップ
+                            </div>
                             <Image
                                 className="top_map_icon"
                                 src="/topsearch/map.svg"
@@ -34,7 +39,9 @@ export default function Topmap() {
                             />
                         </a>
                         <a href="/timetable" className="second_search">
-                            タイムテーブル
+                            <div className="title-top">
+                                タイムテーブル
+                            </div>
                             <Image
                                 className="top_time_icon"
                                 src="/topsearch/calendar.svg"

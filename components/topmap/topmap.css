@@ -2,6 +2,7 @@
     width: 100%;
     margin-top: 5vh;
     margin-bottom: 5vh;
+    background-color: #fff;
 }
 
 .topsearch_event {
@@ -24,7 +25,6 @@
     align-items: center;
     justify-content: center;
     border: 2px rgb(220, 220, 220) solid;
-    background-color: rgb(250, 250, 250);
     border-radius: 20px;
     font-size: clamp(20px, 4vw, 40px);
     position: relative;
@@ -68,7 +68,6 @@
     align-items: center;
     justify-content: center;
     border: 2px rgb(220, 220, 220) solid;
-    background-color: rgb(250, 250, 250);
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -82,7 +81,6 @@
     align-items: center;
     justify-content: center;
     border: 2px rgb(220, 220, 220) solid;
-    background-color: rgb(250, 250, 250);
     border-radius: 20px;
     position: relative;
     overflow: hidden;

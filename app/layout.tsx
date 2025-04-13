@@ -47,10 +47,10 @@ export default function RootLayout({
   if (Enough) {
     return (
       <html lang="jp">
-        <body className={kosugi.className}>
+        <body >
           <WarningPopupCookie />
           <HamburgerMenu />
-          <main>
+          <main className={kosugi.className}>
             {children}
           </main>
           {/* <CookieConsent /> */}
