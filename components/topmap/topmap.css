@@ -1,7 +1,7 @@
 .topsearch {
     width: 100%;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
     background-color: #fff;
 }
 
@@ -24,21 +24,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px rgb(220, 220, 220) solid;
-    border-radius: 20px;
+    border: 8px rgb(0, 177, 3) solid;
     font-size: clamp(20px, 4vw, 40px);
     position: relative;
     overflow: hidden;
-}
-
-.top_event_icon {
-    bottom: -10px;
-    right: -5%;
-    position: absolute;
-    opacity: 0.3;
-    width: 30%;
-    max-width: 250px;
-    height: auto;
+    position: relative;
 }
 
 .bottom_search {
@@ -60,28 +50,14 @@
     font-size: clamp(17px, 3vw, 35px);
 }
 
-.first_search {
+._search {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px rgb(220, 220, 220) solid;
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.second_search {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 2px rgb(220, 220, 220) solid;
-    border-radius: 20px;
+    border: 8px rgb(0, 177, 3) solid;
     position: relative;
     overflow: hidden;
 }
@@ -104,4 +80,41 @@
     width: 30%;
     max-width: 250px;
     height: auto;
+}
+
+.top_event_icon {
+    bottom: -10px;
+    right: -5%;
+    position: absolute;
+    opacity: 0.3;
+    width: 30%;
+    max-width: 250px;
+    height: auto;
+}
+
+._search::before,
+._search::after,
+.search_event::before,
+.search_event::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+}
+
+._search::before,
+.search_event::before {
+    width: 20px;
+    left: 10px;
+    border: solid 3px #ffae00;
+    /*チョーク（黄色）*/
+    border-radius: 3px 2px 0 2px;
+}
+
+._search::after,
+.search_event::after {
+    width: 15px;
+    left: 45px;
+    border: solid 3px #00a2ff;
+    /*チョーク（白） */
+    border-radius: 8px 5px 2px 5px;
 }

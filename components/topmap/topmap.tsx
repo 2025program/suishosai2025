@@ -1,6 +1,7 @@
-import Link from "next/link";
 import "./topmap.css"
 import Image from 'next/image';
+import { Mochiy_Pop_One } from "next/font/google";
+const mochiy = Mochiy_Pop_One({ weight: "400", subsets: ["latin"] });
 
 export default function Topmap() {
     return (
@@ -9,9 +10,8 @@ export default function Topmap() {
                 <div className="topsearch_event">
                     <a href="/event" className="search_event">
                         <div className="title-top">
-                            イベント検索
+                            <p className={mochiy.className}>イベント検索</p>
                         </div>
-
                         <Image
                             className="top_event_icon"
                             src="/topsearch/search.svg"
@@ -25,9 +25,9 @@ export default function Topmap() {
 
                 <div className="bottom_search">
                     <div className="bottom_grid">
-                        <a href="/map" className="first_search">
+                        <a href="/map" className="_search">
                             <div className="title-top">
-                                学校マップ
+                                <p className={mochiy.className}>学校マップ</p>
                             </div>
                             <Image
                                 className="top_map_icon"
@@ -38,9 +38,9 @@ export default function Topmap() {
                                 priority
                             />
                         </a>
-                        <a href="/timetable" className="second_search">
+                        <a href="/timetable" className="_search">
                             <div className="title-top">
-                                タイムテーブル
+                                <p className={mochiy.className}>タイムテーブル</p>
                             </div>
                             <Image
                                 className="top_time_icon"
