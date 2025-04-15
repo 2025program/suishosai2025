@@ -26,7 +26,6 @@ const HamburgerMenu: React.FC = () => {
                 const data = await res.json();
                 setIsDev(data.isDevMode);
             } else {
-                console.error("dev_mode の取得に失敗しました");
                 setIsDev(false);
             }
         }

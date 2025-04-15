@@ -1,11 +1,12 @@
-import React from 'react'
+// pages/Timetable.tsx
+import { DevOnly } from "@/components/DevOnly";
 
-const Timetable: React.FC = () => {
+export default function Timetable() {
     return (
-        <div className="p-8">
-            <h1 className="text-2xl mb-4">timetable</h1>
-        </div>
-    )
+        <DevOnly>
+            <div className="p-8">
+                <h1 className="text-2xl mb-4">timetable</h1>
+            </div>
+        </DevOnly>
+    );
 }
-
-export default Timetable

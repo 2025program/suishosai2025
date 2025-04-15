@@ -12,6 +12,9 @@ import { supabase } from "@/utils/supabase/supabase";
 // 料金情報のインポート
 import { festivalPricing } from "@/utils/festivalPrice";
 
+//開発者モード
+import { DevOnly } from "@/components/DevOnly";
+
 export default function ClassPage() {
     const router = useRouter();
     const params = useParams();
@@ -74,74 +77,76 @@ export default function ClassPage() {
     }
 
     return (
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-            {/* ヘッダー：サンプル画像 */}
-            <header className="relative w-full h-64 mb-4">
-                <Image
-                    src="/twitter-image.jpg" // サンプル画像。実際はイベント画像に差し替え
-                    alt={`${event.title}のヘッダー画像`}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    className="rounded-lg"
-                />
-            </header>
+        <DevOnly>
+            <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+                {/* ヘッダー：サンプル画像 */}
+                <header className="relative w-full h-64 mb-4">
+                    <Image
+                        src="/twitter-image.jpg" // サンプル画像。実際はイベント画像に差し替え
+                        alt={`${event.title}のヘッダー画像`}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        className="rounded-lg"
+                    />
+                </header>
 
-            {/* イベントタイトル */}
-            <h1 className="text-3xl font-bold">{event.title}</h1>
+                {/* イベントタイトル */}
+                <h1 className="text-3xl font-bold">{event.title}</h1>
 
-            {/* ステータスメッセージの表示 */}
-            <div className="my-4">
-                <p className="font-bold">お知らせ</p>
-                <p className="mb-1">
-                    {statusMessage !== null
-                        ? statusMessage
-                        : "現在お知らせはありません。"}
-                </p>
-            </div>
+                {/* ステータスメッセージの表示 */}
+                <div className="my-4">
+                    <p className="font-bold">お知らせ</p>
+                    <p className="mb-1">
+                        {statusMessage !== null
+                            ? statusMessage
+                            : "現在お知らせはありません。"}
+                    </p>
+                </div>
 
-            <div className="my-4">
-                <p className="font-bold">内容</p>
-                <p className="mb-1" style={{ whiteSpace: 'pre-line' }}>
-                    {detail?.detail}
-                </p>
-            </div>
+                <div className="my-4">
+                    <p className="font-bold">内容</p>
+                    <p className="mb-1" style={{ whiteSpace: 'pre-line' }}>
+                        {detail?.detail}
+                    </p>
+                </div>
 
-            {/* 料金情報の表示 */}
-            {pricingInfo &&
-                pricingInfo.categories.map((category, index) => (
-                    <div key={index} className="mt-4" style={{ width: "100%" }}>
-                        <h2 className="text-xl font-bold">{category.category}</h2>
-                        <table className="border-collapse mt-2" style={{ width: "100%", maxWidth: "800px" }}>
-                            <thead>
-                                <tr>
-                                    <th className="border p-2" style={{ width: "70%" }}>品目</th>
-                                    <th className="border p-2" style={{ width: "30%" }}>料金</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {category.items.map((item, idx) => (
-                                    <tr key={idx} className="text-center">
-                                        <td className="border p-2" style={{ width: "70%" }}>{item.label}</td>
-                                        <td className="border p-2" style={{ width: "30%" }}>{item.price}円</td>
+                {/* 料金情報の表示 */}
+                {pricingInfo &&
+                    pricingInfo.categories.map((category, index) => (
+                        <div key={index} className="mt-4" style={{ width: "100%" }}>
+                            <h2 className="text-xl font-bold">{category.category}</h2>
+                            <table className="border-collapse mt-2" style={{ width: "100%", maxWidth: "800px" }}>
+                                <thead>
+                                    <tr>
+                                        <th className="border p-2" style={{ width: "70%" }}>品目</th>
+                                        <th className="border p-2" style={{ width: "30%" }}>料金</th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                ))
-            }
+                                </thead>
+                                <tbody>
+                                    {category.items.map((item, idx) => (
+                                        <tr key={idx} className="text-center">
+                                            <td className="border p-2" style={{ width: "70%" }}>{item.label}</td>
+                                            <td className="border p-2" style={{ width: "30%" }}>{item.price}円</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    ))
+                }
 
-            {/* マップページへ飛ぶリンク */}
-            <Link href={`/map/two?id=${encodeURIComponent(event.title)}`}>
-                <div className="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
-                    展開マップ
-                </div>
-            </Link>
-            <Link href={`/map/three?id=${encodeURIComponent(event.title)}`}>
-                <div className="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
-                    構造マップ
-                </div>
-            </Link>
-        </div>
+                {/* マップページへ飛ぶリンク */}
+                <Link href={`/map/two?id=${encodeURIComponent(event.title)}`}>
+                    <div className="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+                        展開マップ
+                    </div>
+                </Link>
+                <Link href={`/map/three?id=${encodeURIComponent(event.title)}`}>
+                    <div className="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+                        構造マップ
+                    </div>
+                </Link>
+            </div>
+        </DevOnly>
     );
 }
