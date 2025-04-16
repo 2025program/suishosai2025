@@ -3,7 +3,7 @@ import "./homepage.css"
 import Form from '@/components/form/form';
 import Announce from '@/components/announce/announce';
 import Access from '@/components/access/access';
-import Topmap from '@/components/topmap/topmap';
+import TopSelect from '@/components/topselect/topselect';
 import Footer from '@/components/footer/footer';
 
 
@@ -161,8 +161,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/** マップコンテンツ */}
-              <Topmap />
+              {/** セレクトコンテンツ */}
+              <TopSelect />
             </section>
 
             {/** フォーム */}

@@ -1,7 +1,7 @@
-import "./topmap.css"
+import "./topselect.css"
 import Image from 'next/image';
 
-export default function Topmap() {
+export default function TopSelect() {
     return (
         <>
             <div className="topsearch">
