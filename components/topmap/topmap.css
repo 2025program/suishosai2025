@@ -57,7 +57,7 @@
     overflow: hidden;
     color: #1F2937;
     transition: all 300ms ease-out;
-    border: 2px solid #111827;
+    border: 2px solid #151515;
     background-color: #fff;
     border-radius: 0.5rem;
 }
@@ -76,7 +76,7 @@
     margin-bottom: -0.4rem;
     margin-right: -0.5rem;
     transition: all 200ms linear;
-    background-color: #111827;
+    background-color: #151515;
     border-radius: 0.5rem;
 }
 
@@ -186,7 +186,6 @@
         top: 60px;
     }
 
-    /* 3つ目 */
     .index3 {
         top: 120px;
     }
@@ -233,3 +232,5 @@
         writing-mode: horizontal-tb;
     }
 }
+
+/* これ作るの4日かかった */
