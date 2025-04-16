@@ -3,8 +3,7 @@ import "./globals.css";
 import { Noto_Sans_JP } from "next/font/google";
 //import { CookieConsent } from "@/components/CookieConsent";
 import HamburgerMenu from "@/components/HamburgerMenu/HamburgerMenu";
-import Countdown from "@/components/countdown/countdown";
-import WarningPopupCookie from "@/components/WarningPopupCookie";
+import WarningPopupCookie from "@/components/warning/WarningPopupCookie";
 
 const kosugi = Noto_Sans_JP({ weight: "500", subsets: ["latin"] });
 
@@ -35,35 +34,21 @@ export const metadata: Metadata = {
   },
 };
 
-
-//開催期間に合わせて調整してください
-const Enough = true;
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (Enough) {
-    return (
-      <html lang="jp">
-        <body >
-          <WarningPopupCookie />
-          <HamburgerMenu />
-          <main className={kosugi.className}>
-            {children}
-          </main>
-          {/* <CookieConsent /> */}
-        </body>
-      </html>
-    );
-  }
-
   return (
     <html lang="jp">
-      <body className={kosugi.className}>
-        <Countdown />
+      <body >
+        <WarningPopupCookie />
+        <HamburgerMenu />
+        <main className={kosugi.className}>
+          {children}
+        </main>
+        {/* <CookieConsent /> */}
       </body>
     </html>
-  )
+  );
 }

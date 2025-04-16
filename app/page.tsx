@@ -4,6 +4,7 @@ import Form from '@/components/form/form';
 import Announce from '@/components/announce/announce';
 import Access from '@/components/access/access';
 import Topmap from '@/components/topmap/topmap';
+import Footer from '@/components/footer/footer';
 
 
 // Homeコンポーネント
@@ -373,6 +374,9 @@ export default function Home() {
               {/** アクセスコンテンツ */}
               <Access />
             </section>
+
+            {/** フッターコンテンツ */}
+            <Footer />
           </div>
         </main>
       </div>

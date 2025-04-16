@@ -1,13 +1,16 @@
-// /app/map/three/page.tsx
+// /app/map/page.tsx
 "use client";
+import { DevOnly } from "@/components/DevOnly";
 
 import { Suspense } from "react";
 import Three from "./Three";
 
 export default function ThreePage() {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <Three />
-        </Suspense>
+        <DevOnly>
+            <Suspense fallback={<div>Loading...</div>}>
+                <Three />
+            </Suspense>
+        </DevOnly>
     );
 }

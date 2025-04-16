@@ -1,5 +1,4 @@
 import "./access.css"
-import Image from 'next/image';
 
 export default function Access() {
     return (
@@ -16,6 +15,15 @@ export default function Access() {
                     referrerPolicy="no-referrer-when-downgrade"
                     className="map-ab"
                 ></iframe>
+                <h2>〈交通〉</h2>
+                <h3>バスを利用する場合</h3>
+                <p>横浜駅西口6番のりば ⇒ 翠嵐高校前：約10分</p>
+                <h3>徒歩を利用する場合</h3>
+                <p>横浜駅西口から：約20分</p>
+                <p>三ツ沢下町駅から：約12分</p>
+                <p>反町駅から：約18分</p>
+                <h3>その他</h3>
+                <p>自動車および自転車などでのご来場はご遠慮ください</p>
             </div>
         </>
     );

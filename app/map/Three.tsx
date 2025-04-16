@@ -2,7 +2,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
-import styles from "@/components/Map.module.css";
+import styles from "./Map.module.css";
 import { normalizeSearchString } from "@/utils/normalizeKana";
 import { FestivalItem } from "@/types/festival";
 import { festivalItems } from "@/utils/festival";
