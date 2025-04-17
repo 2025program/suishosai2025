@@ -112,14 +112,6 @@
     display: flex
 }
 
-.imageanimation.vertical {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    height: 100%
-}
-
 .imageanimation-image {
     -webkit-animation: loop 40s linear infinite;
     animation: loop 40s linear infinite;
@@ -132,72 +124,43 @@
 }
 
 .imageanimation.reverse .imageanimation-image {
-    animation-direction: reverse
-}
-
-.imageanimation.vertical .imageanimation-image {
-    -webkit-animation: loopVertical 40s linear infinite;
-    animation: loopVertical 40s linear infinite
+    animation-direction: reverse;
 }
 
 .imageanimation-png {
     max-width: none;
-    width: 100%
+    width: 100%;
 }
 
 .imageanimation:not(.vertical) .imageanimation-png {
-    width: auto
+    width: auto;
 }
 
 .imageanimation.hgt .imageanimation-png {
-    height: 12vw
+    height: 12vw;
 }
 
 @-webkit-keyframes loop {
     0% {
         -webkit-transform: translateX(0);
-        transform: translateX(0)
+        transform: translateX(0);
     }
 
     to {
         -webkit-transform: translateX(-100%);
-        transform: translateX(-100%)
+        transform: translateX(-100%);
     }
 }
 
 @keyframes loop {
     0% {
         -webkit-transform: translateX(0);
-        transform: translateX(0)
+        transform: translateX(0);
     }
 
     to {
         -webkit-transform: translateX(-100%);
-        transform: translateX(-100%)
-    }
-}
-
-@-webkit-keyframes loopVertical {
-    0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0)
-    }
-
-    to {
-        -webkit-transform: translateY(-100%);
-        transform: translateY(-100%)
-    }
-}
-
-@keyframes loopVertical {
-    0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0)
-    }
-
-    to {
-        -webkit-transform: translateY(-100%);
-        transform: translateY(-100%)
+        transform: translateX(-100%);
     }
 }
 
@@ -205,74 +168,77 @@
 
 .headtop {
     position: relative;
-    z-index: 1;
-}
-
-.headtop:after {
-    background-repeat: no-repeat;
-    background-size: contain;
-    bottom: 2px;
-    content: "";
-    display: block;
-    left: 0;
-    position: absolute;
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%);
-    width: 100%
+    width: 100%;
+    min-height: 90vh;
+    overflow: hidden;
 }
 
 .headtop-leftarea {
     position: absolute;
-    width: 100%;
-    z-index: -1;
-}
-
-.headtop-textanimation {
-    display: none;
-    height: 100%;
-    left: 0;
-    position: absolute;
     top: 0;
-    width: 4.48%
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
 }
 
 .headtop-right {
-    padding-bottom: 12vw;
-    padding-top: 22.7vw;
-    position: relative
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.headtop-right-sp {
-    max-width: none;
-    pointer-events: none;
-    width: 100%
+.headtop-right img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .headtop-themelogo {
-    left: 6.4%;
     position: absolute;
-    top: 4.4vw;
-    z-index: 2
-}
-
-.headtop-logo-sp {
-    width: 46%
+    top: 2vh;
+    left: 3vw;
+    width: 30%;
+    max-width: 500px;
+    height: auto;
+    z-index: 1;
 }
 
 .headtop-change {
-    left: 5.5%;
     position: absolute;
-    top: 46vw;
-    z-index: 2
+    bottom: 2vh;
+    right: 3vw;
+    width: 50%;
+    max-width: 850px;
+    height: auto;
+    z-index: 1;
 }
 
-.headtop-change-sp {
-    max-width: none;
-    width: 12vw
+.headtop-sp {
+    width: 100%;
+    height: auto;
 }
+
 
 .hidden-x-side {
     overflow-x: hidden;
+}
+
+@media (max-width:767px) {
+    .headtop-themelogo {
+        left: 4vw;
+        width: 50%;
+    }
+
+    .headtop-change {
+        bottom: 0;
+        width: 20%;
+    }
 }
 
 @media (min-width:768px) {
@@ -286,52 +252,5 @@
     .imageanimation.hgt .imageanimation-png {
         height: 6vw;
         max-height: 100px;
-    }
-
-    .headtop:after {
-        display: none
-    }
-
-    .headtop-left {
-        position: relative
-    }
-
-    .headtop-textanimation {
-        display: block;
-    }
-
-    .headtop-right {
-        margin-left: auto;
-        max-width: 70%;
-        padding-bottom: 0;
-        padding-left: 0;
-        padding-top: 0;
-        overflow-y: hidden;
-    }
-
-    .headtop-themelogo {
-        left: auto;
-        margin-top: 5.1%;
-        position: static;
-        top: auto
-    }
-
-    .headtop-logo-sp {
-        display: block;
-        margin-left: 13.8%;
-        width: 25.9%
-    }
-
-    .headtop-change {
-        left: auto;
-        margin-top: 3.6%;
-        position: relative;
-        top: auto
-    }
-
-    .headtop-change-sp {
-        display: block;
-        margin-left: 10.2%;
-        width: 30.9375%
     }
 }

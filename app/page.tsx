@@ -19,54 +19,32 @@ export default function Home() {
             <section className="headtop">
               <div className="headtop-leftarea">
                 <div className="headtop-left">
-                  <div className="headtop-textanimation">
-                    <div className="imageanimation vertical">
-                      <div className="imageanimation-image">
-                        <Image
-                          className="imageanimation-png img"
-                          src="/welcome/title.png"
-                          alt=""
-                          width={172}
-                          height={2636}
-                          priority
-                        />
-                      </div>
-                      <div className="imageanimation-image">
-                        <Image
-                          className="imageanimation-png img"
-                          src="/welcome/title.png"
-                          alt=""
-                          width={172}
-                          height={2636}
-                          priority
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <h1 className="headtop-themelogo">
+
+                  <div className="headtop-themelogo">
                     <picture>
                       <source
                         media="(min-width:768px)"
                         srcSet="/welcome/logopc.png"
                       />
                       <Image
-                        className="headtop-logo-sp img"
+                        className="headtop-sp img"
                         src="/welcome/logosp.png"
                         alt=""
-                        width={831}
-                        height={714}
+                        width={900}
+                        height={850}
                         priority
                       />
                     </picture>
-                  </h1>
-                  <p className="headtop-change">
+                  </div>
+
+                  <div className="headtop-change">
                     <picture>
                       <source
                         media="(min-width:768px)"
                         srcSet="/welcome/themepc.png"
                       />
                       <Image
-                        className="headtop-change-sp img"
+                        className="headtop-sp img"
                         src="/welcome/themesp.png"
                         alt="neo"
                         width={180}
@@ -74,7 +52,8 @@ export default function Home() {
                         priority
                       />
                     </picture>
-                  </p>
+                  </div>
+
                 </div>
               </div>
               <div className="headtop-right">
@@ -87,8 +66,8 @@ export default function Home() {
                     className="headtop-right-sp img"
                     src="/welcome/rightsp.png"
                     alt=""
-                    width={750}
-                    height={991}
+                    width={3000}
+                    height={2000}
                     priority
                   />
                 </picture>
