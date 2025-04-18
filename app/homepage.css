@@ -10,7 +10,7 @@
 
 .img {
     height: auto;
-    max-width: 100%
+    max-width: 100%;
 }
 
 /** ヘッダーの共通デザイン **/
@@ -109,7 +109,7 @@
 .imageanimation {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex
+    display: flex;
 }
 
 .imageanimation-image {
@@ -120,7 +120,7 @@
     display: flex;
     -webkit-box-flex: 0;
     -ms-flex: none;
-    flex: none
+    flex: none;
 }
 
 .imageanimation.reverse .imageanimation-image {
