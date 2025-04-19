@@ -65,7 +65,7 @@ export default function Stuff() {
             <div className="members">
                 <picture className="member-picture">
                     <Image
-                   src="/member.png"
+                   src="/member.jpg"
                    alt=""
                    width={3000}
                    height={1000}
