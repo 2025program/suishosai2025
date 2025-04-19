@@ -40,7 +40,7 @@ export default function Home() {
                   <div className="headtop-change">
                     <picture>
                       <source
-                        media="(min-width:768px)"
+                        media="(min-width:800px)"
                         srcSet="/welcome/themepc.png"
                       />
                       <Image
@@ -59,7 +59,7 @@ export default function Home() {
               <div className="headtop-right">
                 <picture>
                   <source
-                    media="(min-width:768px)"
+                    media="(min-width:800px)"
                     srcSet="/welcome/rightpc.png"
                   />
                   <Image
