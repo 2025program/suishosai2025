@@ -9,11 +9,37 @@ import Footer from '@/components/footer/footer';
 
 // Homeコンポーネント
 export default function Home() {
+  const LEAF_COUNT = 10; // ← 多すぎると不思議な感じになるよ
+
+  const colors = ["#ffbf00", "#009926", "#c2704e"];
+  const leaves = Array.from({ length: LEAF_COUNT });
   return (
     <>
       <div className="body">
         <main>
           <div className="hidden-x-side">
+
+            <div className="boxerleaf">
+              <ul className="leaf">
+                {leaves.map((_, i) => {
+                  // ランダムなパラメータを CSS変数 に詰める
+                  const startX = 50 + Math.random() * 70;
+                  const style: React.CSSProperties = {
+                    "--startX": `${startX}%`,
+                    "--sizeW": `${Math.random() * 16 + 16}px`,
+                    "--sizeH": `${Math.random() * 8 + 12}px`,
+                    "--fallDur": `${Math.random() * 7 + 8}s`,
+                    "--fallDelay": `${Math.random() * 5}s`,
+                    "--color": colors[Math.floor(Math.random() * colors.length)],
+                  } as any;
+
+                  // 偶奇で揺れアニメーションを交互に
+                  const swayClass = i % 2 === 0 ? "sway1" : "sway2";
+
+                  return <li key={i} className={swayClass} style={style}></li>;
+                })}
+              </ul>
+            </div>
 
             {/** ヘッダー */}
             <section className="headtop">
@@ -40,7 +66,7 @@ export default function Home() {
                   <div className="headtop-change">
                     <picture>
                       <source
-                        media="(min-width:800px)"
+                        media="(min-width:768px)"
                         srcSet="/welcome/themepc.png"
                       />
                       <Image
@@ -56,11 +82,16 @@ export default function Home() {
 
                 </div>
               </div>
+
               <div className="headtop-right">
                 <picture>
                   <source
-                    media="(min-width:800px)"
+                    media="(min-width:1024px)"
                     srcSet="/welcome/rightpc.png"
+                  />
+                  <source
+                    media="(min-width:660px)"
+                    srcSet="/welcome/rightpd.png"
                   />
                   <Image
                     className="headtop-right-sp img"
@@ -72,6 +103,9 @@ export default function Home() {
                   />
                 </picture>
               </div>
+
+              <a href="#_" className='payment-btn'>お支払いについて</a>
+
             </section>
 
             {/** マップ */}
@@ -355,7 +389,9 @@ export default function Home() {
             </section>
 
             {/** フッターコンテンツ */}
-            <Footer />
+            <div className="headbox">
+              <Footer />
+            </div>
           </div>
         </main>
       </div>

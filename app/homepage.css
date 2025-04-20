@@ -13,6 +13,92 @@
     max-width: 100%;
 }
 
+.hidden-x-side {
+    overflow-x: hidden;
+}
+
+/* コンテナ */
+.boxerleaf {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.leaf {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* 葉っぱ共通 */
+.leaf li {
+    position: absolute;
+    top: -10%;
+    right: var(--startX);
+    width: var(--sizeW);
+    height: var(--sizeH);
+    background-color: var(--color);
+    border-radius: 0% 70%;
+    animation:
+        fall var(--fallDur) linear infinite var(--fallDelay);
+}
+
+/* 右上→左下へ斜めに流す */
+@keyframes fall {
+    0% {
+        top: -10%;
+        left: var(--startX);
+    }
+
+    100% {
+        top: 110%;
+        left: 10%;
+    }
+}
+
+/* 左右にゆらすアニメ１ */
+@keyframes sway1 {
+    0% {
+        transform: translateX(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateX(200px) rotate(-45deg);
+    }
+}
+
+/* 左右にゆらすアニメ２ */
+@keyframes sway2 {
+    0% {
+        transform: translateX(200px) rotate(-45deg);
+    }
+
+    100% {
+        transform: translateX(0px) rotate(0deg);
+    }
+}
+
+/* 上記 sway を fall と並列適用 */
+.leaf li.sway1 {
+    animation:
+        fall var(--fallDur) linear infinite var(--fallDelay),
+        sway1 3s ease-in-out infinite alternate var(--fallDelay);
+}
+
+.leaf li.sway2 {
+    animation:
+        fall var(--fallDur) linear infinite var(--fallDelay),
+        sway2 3s ease-in-out infinite alternate var(--fallDelay);
+}
+
 /** ヘッダーの共通デザイン **/
 
 .box-tag {
@@ -58,7 +144,6 @@
 .headbox {
     position: relative;
     z-index: 3;
-    background-color: white;
 }
 
 .box-up {
@@ -100,7 +185,7 @@
     .newsbox-up,
     .mapbox-up,
     .accessbox-up {
-        background: white;
+        background: rgba(255, 255, 255, 0);
     }
 }
 
@@ -171,6 +256,7 @@
     width: 100%;
     min-height: 90vh;
     overflow: hidden;
+    background-color: #fff;
 }
 
 .headtop-leftarea {
@@ -211,10 +297,10 @@
 
 .headtop-change {
     position: absolute;
-    bottom: 2vh;
+    bottom: 0;
     right: 3vw;
-    width: 50%;
-    max-width: 850px;
+    width: 35%;
+    max-width: 550px;
     height: auto;
     z-index: 1;
 }
@@ -224,66 +310,54 @@
     height: auto;
 }
 
-
-.hidden-x-side {
-    overflow-x: hidden;
-}
-
-/* 画面左下に配置・サイズ指定 */
-.payment {
-    position: absolute;
-    left: 3vw;
-    bottom: 3vh;
-    width: 30vw;
-    max-width: 450px;
-    min-width: 200px;
-    z-index: 5;
-}
-
-/* 画像とテキストを包含する相対コンテナ */
-.payment-inner {
-    position: relative;
-    width: 100%;
-    height: auto;
-}
-
-/* 画像はコンテナ幅いっぱいに */
-.headtop-payment {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-/* テキストを画像中央に重ねる */
-.payment-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    pointer-events: none;
-}
-
-.payment-text p {
-    margin: 0;
-    line-height: 1;
-    font-weight: bold;
-}
-
 @media (max-width:767px) {
     .headtop-themelogo {
         left: 4vw;
         width: 50%;
     }
+
+    .headtop-change {
+        bottom: 1vh;
+        width: 25%;
+        max-width: 150px;
+    }
 }
 
-@media (max-width:800px) {
-    .headtop-change {
-        bottom: 0;
-        width: 20%;
-    }
+.payment-btn {
+    position: absolute;
+    color: #fff;
+    font-weight: bold;
+    left: 3vw;
+    bottom: 5vh;
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border: 3px double #333;
+    border-radius: 9999px;
+    background-color: #ff0000;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    overflow: hidden;
+    z-index: 5;
+}
+
+/* 右側に「〉」を追加 */
+.payment-btn::after {
+    content: '〉';
+    display: inline-block;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* ホバー時の背景色 */
+.payment-btn:hover {
+    background-color: #ec0000;
+}
+
+/* ホバー時に矢印を右にスライド */
+.payment-btn:hover::after {
+    transform: translateX(5px);
 }
 
 @media (min-width:768px) {
@@ -297,5 +371,12 @@
     .imageanimation.hgt .imageanimation-png {
         height: 6vw;
         max-height: 100px;
+    }
+
+    .payment-btn {
+        left: 5vw;
+        bottom: 8vh;
+        padding: 2rem 2rem;
+        font-size: 1.3rem;
     }
 }

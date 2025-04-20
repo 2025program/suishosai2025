@@ -87,12 +87,10 @@ const EventPage: React.FC = () => {
             {/* ヘッダー */}
             <picture className="roller">
                 <source
-                    type="image/webp"
                     media="(min-width: 1400px)"
                     srcSet="/roller/roller_blue_biggest.png"
                 />
                 <source
-                    type="image/webp"
                     media="(min-width: 768px)"
                     srcSet="/roller/roller_blue_pc.png"
                 />

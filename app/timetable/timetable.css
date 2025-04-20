@@ -1,0 +1,33 @@
+.payment-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    /* 縦を 0.75rem に増量 */
+    border: 3px double #333;
+    border-radius: 9999px;
+    /* 両端を完全な丸に */
+    background-color: #f0f0f0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    overflow: hidden;
+}
+
+/* 右側に「〉」を追加 */
+.payment-btn::after {
+    content: '〉';
+    display: inline-block;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* ホバー時の背景色 */
+.payment-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* ホバー時に矢印を右にスライド */
+.payment-btn:hover::after {
+    transform: translateX(5px);
+}
