@@ -1,5 +1,3 @@
-"use client";
-
 import "./about.css"
 import Image from 'next/image';
 
@@ -46,51 +44,51 @@ export default function Stuff() {
             </section>
 
             <div className="container">
-            <section className="sent">
-                <h2 className="text-xl mb-2">2025年度全日制翠翔祭実行委員長</h2>
-                <h3 className="text-xl mb-2">池田晴彦</h3>
-                <a className="bun">ありがたいお言葉</a>
-            </section>
+                <section className="sent">
+                    <h2 className="text-xl mb-2">2025年度全日制翠翔祭実行委員長</h2>
+                    <h3 className="text-xl mb-2">池田晴彦</h3>
+                    <a className="bun">ありがたいお言葉</a>
+                </section>
 
-            <section className="sent">
-                <h2 className="text-xl mb-2">2025年度定時制翠翔祭実行委員長</h2>
-                <h3 className="text-xl mb-2">？？？？</h3>
-                <a className="bun">ありがたいお言葉</a>
-            </section>
+                <section className="sent">
+                    <h2 className="text-xl mb-2">2025年度定時制翠翔祭実行委員長</h2>
+                    <h3 className="text-xl mb-2">？？？？</h3>
+                    <a className="bun">ありがたいお言葉</a>
+                </section>
             </div>
-            
 
-            
+
+
 
             <div className="members">
                 <picture className="member-picture">
                     <Image
-                   src="/member.jpg"
-                   alt=""
-                   width={3000}
-                   height={1000}
+                        src="/member.jpg"
+                        alt=""
+                        width={3000}
+                        height={1000}
                     />
                 </picture>
                 <section>
-                <h2 className="text-xl mb-2">翠翔祭実行委員会総務部紹介</h2>
-                <h3 className="h3">| 実行委員長</h3>
-                <a className="member-name">　池田晴彦</a>
-                <h3 className="h3">| 副委員長兼会計長</h3>
-                <a className="member-name">　山口理緒</a>
-                <h3 className="h3">| 会場長</h3>
-                <a className="member-name">　深堀絢心</a>
-                <h3 className="h3">| 調理食販部統括責任者</h3>
-                <a className="member-name">　東城英寿</a>
-                <h3 className="h3">| プログラム部統括責任者</h3>
-                <a className="member-name">　水谷駿佑</a>
-                <h3 className="h3">| アーチ・広報部統括責任者</h3>
-                <a className="member-name">　浅井心遙</a>
-                <h3 className="h3">| SP部統括責任者</h3>
-                <a className="member-name">　𠮷岡太郎</a>
-                <h3 className="h3">| 後夜祭・ステージ部統括責任者</h3>
-                <a className="member-name">　富永恵未</a>
+                    <h2 className="text-xl mb-2">翠翔祭実行委員会総務部紹介</h2>
+                    <h3 className="h3">| 実行委員長</h3>
+                    <a className="member-name">　池田晴彦</a>
+                    <h3 className="h3">| 副委員長兼会計長</h3>
+                    <a className="member-name">　山口理緒</a>
+                    <h3 className="h3">| 会場長</h3>
+                    <a className="member-name">　深堀絢心</a>
+                    <h3 className="h3">| 調理食販部統括責任者</h3>
+                    <a className="member-name">　東城英寿</a>
+                    <h3 className="h3">| プログラム部統括責任者</h3>
+                    <a className="member-name">　水谷駿佑</a>
+                    <h3 className="h3">| アーチ・広報部統括責任者</h3>
+                    <a className="member-name">　浅井心遙</a>
+                    <h3 className="h3">| SP部統括責任者</h3>
+                    <a className="member-name">　𠮷岡太郎</a>
+                    <h3 className="h3">| 後夜祭・ステージ部統括責任者</h3>
+                    <a className="member-name">　富永恵未</a>
                 </section>
-                
+
             </div>
 
             <section className="mb-6">

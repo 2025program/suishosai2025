@@ -1,5 +1,4 @@
 // /app/map/page.tsx
-"use client";
 import { DevOnly } from "@/components/DevOnly";
 
 import { Suspense } from "react";

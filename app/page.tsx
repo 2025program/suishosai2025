@@ -9,37 +9,11 @@ import Footer from '@/components/footer/footer';
 
 // Homeコンポーネント
 export default function Home() {
-  const LEAF_COUNT = 10; // ← 多すぎると不思議な感じになるよ
-
-  const colors = ["#ffbf00", "#009926", "#c2704e"];
-  const leaves = Array.from({ length: LEAF_COUNT });
   return (
     <>
       <div className="body">
         <main>
           <div className="hidden-x-side">
-
-            <div className="boxerleaf">
-              <ul className="leaf">
-                {leaves.map((_, i) => {
-                  // ランダムなパラメータを CSS変数 に詰める
-                  const startX = 50 + Math.random() * 70;
-                  const style: React.CSSProperties = {
-                    "--startX": `${startX}%`,
-                    "--sizeW": `${Math.random() * 16 + 16}px`,
-                    "--sizeH": `${Math.random() * 8 + 12}px`,
-                    "--fallDur": `${Math.random() * 7 + 8}s`,
-                    "--fallDelay": `${Math.random() * 5}s`,
-                    "--color": colors[Math.floor(Math.random() * colors.length)],
-                  } as any;
-
-                  // 偶奇で揺れアニメーションを交互に
-                  const swayClass = i % 2 === 0 ? "sway1" : "sway2";
-
-                  return <li key={i} className={swayClass} style={style}></li>;
-                })}
-              </ul>
-            </div>
 
             {/** ヘッダー */}
             <section className="headtop">
