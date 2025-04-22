@@ -114,28 +114,28 @@
 .about_top_member h1,
 .about_site h1,
 .about_commute h1 {
-    font-size: clamp(25px, 4.3vw, 43px);
+    font-size: clamp(25px, 4.3vw, 33px);
 }
 
 .about_suiran h2,
 .about_top_member h2,
 .about_site h2,
 .about_commute h2 {
-    font-size: clamp(18px, 3.3vw, 32px);
+    font-size: clamp(18px, 3.3vw, 28px);
 }
 
 .about_suiran h3,
 .about_top_member h3,
 .about_site h3,
 .about_commute h3 {
-    font-size: clamp(17px, 2.5vw, 28px);
+    font-size: clamp(17px, 2.5vw, 23px);
 }
 
 .about_suiran p,
 .about_top_member p,
 .about_site p,
 .about_commute p {
-    font-size: clamp(14px, 2vw, 20px);
+    font-size: clamp(14px, 2vw, 18px);
     margin-bottom: 1.5vh;
 }
 
