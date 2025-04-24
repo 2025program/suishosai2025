@@ -78,34 +78,34 @@ export default function ClassPage() {
 
     return (
         <DevOnly>
-            <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+            <div className="">
                 {/* ヘッダー：サンプル画像 */}
-                <header className="relative w-full h-64 mb-4">
+                <header className="">
                     <Image
-                        src="/twitter-image.jpg" // サンプル画像。実際はイベント画像に差し替え
-                        alt={`${event.title}のヘッダー画像`}
-                        fill
-                        style={{ objectFit: "cover" }}
-                        className="rounded-lg"
+                        src="/event/event.png"
+                        alt=""
+                        width={100}
+                        height={100}
+                        className=""
                     />
                 </header>
 
                 {/* イベントタイトル */}
-                <h1 className="text-3xl font-bold">{event.title}</h1>
+                <h1 className="">{event.title}</h1>
 
                 {/* ステータスメッセージの表示 */}
-                <div className="my-4">
-                    <p className="font-bold">お知らせ</p>
-                    <p className="mb-1">
+                <div className="">
+                    <p className="">お知らせ</p>
+                    <p className="">
                         {statusMessage !== null
                             ? statusMessage
                             : "現在お知らせはありません。"}
                     </p>
                 </div>
 
-                <div className="my-4">
-                    <p className="font-bold">内容</p>
-                    <p className="mb-1" style={{ whiteSpace: 'pre-line' }}>
+                <div className="">
+                    <p className="">内容</p>
+                    <p className="" style={{ whiteSpace: 'pre-line' }}>
                         {detail?.detail}
                     </p>
                 </div>
@@ -113,20 +113,20 @@ export default function ClassPage() {
                 {/* 料金情報の表示 */}
                 {pricingInfo &&
                     pricingInfo.categories.map((category, index) => (
-                        <div key={index} className="mt-4" style={{ width: "100%" }}>
-                            <h2 className="text-xl font-bold">{category.category}</h2>
-                            <table className="border-collapse mt-2" style={{ width: "100%", maxWidth: "800px" }}>
+                        <div key={index} className="" style={{ width: "100%" }}>
+                            <h2 className="">{category.category}</h2>
+                            <table className="" style={{ width: "100%", maxWidth: "800px" }}>
                                 <thead>
                                     <tr>
-                                        <th className="border p-2" style={{ width: "70%" }}>品目</th>
-                                        <th className="border p-2" style={{ width: "30%" }}>料金</th>
+                                        <th className="" style={{ width: "70%" }}>品目</th>
+                                        <th className="" style={{ width: "30%" }}>料金</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {category.items.map((item, idx) => (
-                                        <tr key={idx} className="text-center">
-                                            <td className="border p-2" style={{ width: "70%" }}>{item.label}</td>
-                                            <td className="border p-2" style={{ width: "30%" }}>{item.price}円</td>
+                                        <tr key={idx} className="">
+                                            <td className="" style={{ width: "70%" }}>{item.label}</td>
+                                            <td className="" style={{ width: "30%" }}>{item.price}円</td>
                                         </tr>
                                     ))}
                                 </tbody>
@@ -136,14 +136,9 @@ export default function ClassPage() {
                 }
 
                 {/* マップページへ飛ぶリンク */}
-                <Link href={`/map/two?id=${encodeURIComponent(event.title)}`}>
-                    <div className="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
-                        展開マップ
-                    </div>
-                </Link>
-                <Link href={`/map/three?id=${encodeURIComponent(event.title)}`}>
-                    <div className="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
-                        構造マップ
+                <Link href={`/map?id=${encodeURIComponent(event.title)}`}>
+                    <div className="">
+                        マップ
                     </div>
                 </Link>
             </div>
