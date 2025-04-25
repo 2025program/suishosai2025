@@ -23,19 +23,9 @@ export default function About() {
         <div>
             <div className="about_toppers">
                 <picture className="roller">
-                    <source
-                        type=""
-                        media="(min-width: 1400px)"
-                        srcSet="/roller/roller_orange_biggest.png"
-                    />
-                    <source
-                        type=""
-                        media="(min-width: 768px)"
-                        srcSet="/roller/roller_orange_pc.png"
-                    />
                     <Image
                         className="roller_sp"
-                        src="/roller/roller_orange_sp.png"
+                        src="/welcome/newscoversp.png"
                         alt=""
                         width={3000}
                         height={1000}
@@ -52,13 +42,7 @@ export default function About() {
                 <div className="about_main">
 
                     <div className="background_about_img" ref={leafRef}>
-                        <Image
-                            src="/about/leaf.png"
-                            alt=""
-                            width={800}
-                            height={1200}
-                            priority
-                        />
+                        
                     </div>
 
                     <div className="about_suiran">
@@ -68,11 +52,11 @@ export default function About() {
                             来場お待ちしております。</p>
                     </div>
                     <div className="about_top_member">
-                        <h1>《実行役員紹介》</h1>
-                        <h2>2025年度全日制翠翔祭実行委員長</h2>
+                        <h1>《翠翔祭実行委員会紹介》</h1>
+                        <h3>2025年度全日制翠翔祭実行委員長</h3>
                         <h3>池田晴彦</h3>
                         <p>なんかここにはコメントでも入れておいてください。</p>
-                        <h2>2025年度定時制翠翔祭実行委員長</h2>
+                        <h3>2025年度定時制翠翔祭実行委員長</h3>
                         <h3>翠嵐太郎</h3>
                         <p>なんかここにはコメントでも入れておいてください。</p>
                         <h2>〈総務部紹介〉</h2>
@@ -99,11 +83,20 @@ export default function About() {
                         <p>水谷駿佑</p>
                         <h3>システム・デザイン・設計</h3>
                         <p>pent</p>
+                        <h3>ロゴ制作</h3>
+                        <p>ああああ</p>
+
+                        <p>協力してくださった皆さん、ありがとうございました</p>
                     </div>
-                    <div className="about_commute">
-                        <p>サイトに関する質問や問題の報告はこちらから</p>
-                        <a href="#_">フォーム</a>
-                    </div>
+                    <div className="member-picture">
+                            <Image
+                               src="/member.jpg"
+                               alt=""
+                               width={3000}
+                               height={1000}
+                            />
+                        </div>
+                    
                 </div>
             </div>
         </div>
