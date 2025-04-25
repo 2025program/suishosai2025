@@ -73,7 +73,7 @@
     position: absolute;
     top: -15px;
     transform: translateX(-.3em) rotate(-5deg);
-    padding: .5em 2em;
+    padding: 0.5em 2em;
     border-right: 2px dotted rgb(0 0 0 / 10%);
     border-left: 2px dotted rgb(0 0 0 / 10%);
     box-shadow: 0 0 5px rgb(0 0 0 / 20%);
@@ -91,7 +91,6 @@
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 
 .box-010 p {
     margin: 0;
