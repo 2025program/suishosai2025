@@ -1,6 +1,10 @@
 .body {
-    line-height: inherit;
     margin: 0;
+}
+
+.test-content {
+    width: 100%;
+    height: 80vh;
 }
 
 .img,
