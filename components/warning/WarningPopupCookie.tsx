@@ -58,14 +58,6 @@ const WarningPopupCookie = () => {
                     <p>※1</p>
                 </div>
                 支払い方法一覧：画像
-                <Image
-                    className="box-up-sp img"
-                    src="/welcome/footercoversp.png"
-                    alt=""
-                    width={3000}
-                    height={1000}
-                    priority
-                />
                 ※1 食堂に関しては現金のみです
                 <button onClick={handleClose} className='warning-close'>閉じる</button>
             </div>

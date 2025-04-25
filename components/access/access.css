@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
 }
 
 .access_about {
@@ -11,7 +10,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ffffffc2;
     padding-bottom: 30px;
 }
 

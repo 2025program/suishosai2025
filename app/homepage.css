@@ -19,54 +19,31 @@
 
 /** ヘッダーの共通デザイン **/
 
-.box-tag {
-    /** タグのpcサイズ設定は一番下にある (min-width設定) **/
+.top_index {
     position: absolute;
-    left: -25px;
-    top: 0px;
-    height: clamp(10px, 25vw, 160px);
-    min-height: 110px;
-    width: auto;
-    z-index: 7;
-    -webkit-transform: rotate(5deg);
-    transform: rotate(5deg);
+    width: clamp(200px, 30vw, 280px);
+    z-index: -1;
+    top: clamp(-60px, -6vw, -42px);
+    left: -10px;
 }
 
 .slidebox-animation {
     position: absolute;
-    top: 0;
     z-index: 1;
-    -webkit-transform: rotate(2deg);
-    transform: rotate(2deg);
-    margin-top: clamp(20px, 10vw, 150px);
-}
-
-@media (max-width: 767px) {
-    .slidebox-animation {
-        z-index: 5;
-        -webkit-transform: rotate(-2deg);
-        transform: rotate(-2deg);
-        margin-top: 1rem;
-    }
-}
-
-.titlecover {
-    position: relative;
-    z-index: 2;
-}
-
-.box-up-sp {
-    display: block;
 }
 
 .headbox {
     position: relative;
     z-index: 3;
+    padding-bottom: 30px;
 }
 
 .box-up {
     width: 100%;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     min-height: 120px;
     position: relative;
     overflow: hidden;
@@ -74,97 +51,19 @@
 
 /** ニュースのヘッダーカラー **/
 .newsbox-up {
-    background-color: #008dff;
+    background-color: #ff9d00;
 }
-
-/** マップのヘッダーカラー **/
 
 .mapbox-up {
-    background-color: #ff0000;
+    background-color: #ff3d16;
 }
-
-/** フッターのヘッダーカラー **/
 
 .formbox-up {
-    background-color: #ff9300;
+    background-color: #00a5ff;
 }
-
-/** アクセスのヘッダーカラー **/
 
 .accessbox-up {
-    background-color: #ff00c3;
-}
-
-/** モバイル版では背景を白にする **/
-
-@media (max-width: 767px) {
-
-    .formbox-up,
-    .newsbox-up,
-    .mapbox-up,
-    .accessbox-up {
-        background: rgba(255, 255, 255, 0);
-    }
-}
-
-/** タイトルのアニメーション設定 **/
-
-.imageanimation {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.imageanimation-image {
-    -webkit-animation: loop 40s linear infinite;
-    animation: loop 40s linear infinite;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 0;
-    -ms-flex: none;
-    flex: none;
-}
-
-.imageanimation.reverse .imageanimation-image {
-    animation-direction: reverse;
-}
-
-.imageanimation-png {
-    max-width: none;
-    width: 100%;
-}
-
-.imageanimation:not(.vertical) .imageanimation-png {
-    width: auto;
-}
-
-.imageanimation.hgt .imageanimation-png {
-    height: 12vw;
-}
-
-@-webkit-keyframes loop {
-    0% {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-    }
-
-    to {
-        -webkit-transform: translateX(-100%);
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes loop {
-    0% {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-    }
-
-    to {
-        -webkit-transform: translateX(-100%);
-        transform: translateX(-100%);
-    }
+    background-color: #ffef3b;
 }
 
 /** ヘッダー(一番最初のトップデザイン) **/
@@ -175,6 +74,7 @@
     min-height: 90vh;
     overflow: hidden;
     background-color: #fff;
+    margin-bottom: 20px;
 }
 
 .headtop-leftarea {
@@ -279,18 +179,6 @@
 }
 
 @media (min-width:768px) {
-    .box-tag {
-        left: -40px;
-        top: 1vw;
-        height: 18vw;
-        max-height: 250px;
-    }
-
-    .imageanimation.hgt .imageanimation-png {
-        height: 6vw;
-        max-height: 100px;
-    }
-
     .payment-btn {
         left: 5vw;
         bottom: 8vh;
