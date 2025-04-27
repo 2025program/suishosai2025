@@ -4,7 +4,7 @@
     z-index: 1;
 }
 
-.header {
+.header{
     margin-top: 70px;
     width: 100%;
     display: flex;
@@ -14,28 +14,14 @@
     height: 23vw;
 }
 
-.ab-title {
+.at-title {
     font-family: Impact;
     font-size: 10vw;
     z-index: 3;
 }
 
-@media (max-width: 767px) {
-    .roller {
-        right: 0;
-        left: auto;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1399px) {
-    .roller {
-        right: 0;
-        left: auto;
-    }
-}
-
 @media (max-width: 768px) {
-    .ab-title {
+    .at-title {
         font-size: 12vw;
     }
 
@@ -45,12 +31,6 @@
 }
 
 @media (min-width: 1400px) {
-    .roller {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 1400px;
-    }
-
     .header {
         width: 100%;
         height: 300px;
@@ -61,21 +41,23 @@
     }
 }
 
-.about_toppers {
+.at_toppers {
     padding-bottom: 20px;
 }
 
-.about-pc-box {
+.at-pc-box {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     margin-bottom: 50px;
     position: relative;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px
 }
 
-.about_main {
+.at_main {
     padding: 10px 25px 10px 25px;
     width: 100%;
     height: 100%;
@@ -84,9 +66,10 @@
     flex-direction: column;
     position: relative;
     align-items: center;
+    text-align: center;
 }
 
-.about_main::before {
+.at_main::before {
     content: '';
     position: absolute;
     top: 0;
@@ -99,7 +82,7 @@
     background-repeat: no-repeat;
 }
 
-.about_main::after {
+.at_main::after {
     content: '';
     position: absolute;
     top: 0;
@@ -112,71 +95,37 @@
     background-repeat: no-repeat;
 }
 
-.about_suiran h1,
-.about_top_member h1,
-.about_site h1,
-.about_commute h1 {
+.el-money{
+    width: 50%;
+}
+
+.payment h1,
+.guide h1{
     font-size: clamp(25px, 4.3vw, 33px);
     color:#008dff;
 }
 
-.about_suiran h2,
-.about_top_member h2,
-.about_site h2,
-.about_commute h2 {
+.payment h2,
+.guide h2{
     font-size: clamp(18px, 3.3vw, 28px);
 }
 
-.about_suiran h3,
-.about_top_member h3,
-.about_site h3,
-.about_commute h3 {
+.payment h3,
+.guide h3{
     font-size: clamp(17px, 2.5vw, 23px);
 }
 
-.about_suiran p,
-.about_top_member p,
-.about_site p,
-.about_commute p {
+.payment p,
+.guide p{
     font-size: clamp(14px, 2vw, 18px);
     margin-bottom: 1.5vh;
 }
 
-.about_suiran,
-.about_top_member,
-.about_site,
-.about_commute {
+.payment,
+.guide{
     margin-bottom: 1.5vh;
 }
 
-.about_suiran a,
-.about_top_member a,
-.about_site a,
-.about_commute a {
-    font-size: clamp(14px, 2vw, 20px);
-    color: rgb(75, 75, 255);
-    border-bottom: 2px solid rgb(75, 75, 255);
-}
-
-.about_suiran a:hover,
-.about_top_member a:hover,
-.about_site a:hover,
-.about_commute a:hover {
-    color: rgb(42, 42, 255);
-    border-bottom: 2px solid rgb(42, 42, 255);
-}
-
-.background_about_img {
-    z-index: -1;
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -65%);
-    will-change: transform;
-}
-
-.member-picture{
-    width: 50%;
-    
+.clothes{
+    display: flex;
 }
