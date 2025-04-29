@@ -78,7 +78,7 @@ export default function Home() {
               </picture>
             </div>
 
-            <a href="#_" className='payment-btn'>お支払いについて</a>
+            <a href="/attention" className='payment-btn'>お支払いについて</a>
 
           </section>
 
