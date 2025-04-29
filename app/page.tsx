@@ -84,66 +84,64 @@ export default function Home() {
 
 
           <DevOnly>
-            <>
-              {/** マップ */}
-              <section className='headbox mapbox-up'>
-                <Image
-                  className="top_index"
-                  src="/welcome/index_search.png"
-                  alt=""
-                  width={800}
-                  height={300}
-                  priority
-                />
-                {/** <TopSelect /> */}
-                <div className="test-content"></div>
-              </section>
+            <div className="mid_header">
+              <div className="mid_contenter">
+                {/** マップ */}
+                <section className='headbox mapbox-up'>
+                  <Image
+                    className="top_index"
+                    src="/welcome/index_search.png"
+                    alt=""
+                    width={800}
+                    height={300}
+                    priority
+                  />
+                  <TopSelect />
+                </section>
 
-              {/** フォーム */}
-              <section className='headbox formbox-up '>
-                <Image
-                  className="top_index"
-                  src="/welcome/index_form.png"
-                  alt=""
-                  width={800}
-                  height={300}
-                  priority
-                />
-                {/** <Form /> */}
-                <div className="test-content"></div>
-              </section>
+                {/** フォーム */}
+                <section className='headbox formbox-up'>
+                  <Image
+                    className="top_index"
+                    src="/welcome/index_form.png"
+                    alt=""
+                    width={800}
+                    height={300}
+                    priority
+                  />
+                  <Form />
+                </section>
 
-              {/** ニュース */}
-              <section className="headbox newsbox-up">
-                <Image
-                  className="top_index"
-                  src="/welcome/index_news.png"
-                  alt=""
-                  width={800}
-                  height={300}
-                  priority
-                />
-                {/** <Announce /> */}
-                <div className="test-content"></div>
-              </section>
+                {/** ニュース */}
+                <section className="headbox newsbox-up">
+                  <Image
+                    className="top_index"
+                    src="/welcome/index_news.png"
+                    alt=""
+                    width={800}
+                    height={300}
+                    priority
+                  />
+                  <Announce />
+                </section>
 
-              {/** アクセス */}
-              <section className='headbox accessbox-up'>
-                <Image
-                  className="top_index"
-                  src="/welcome/index_access.png"
-                  alt=""
-                  width={800}
-                  height={300}
-                  priority
-                />
-                {/** <Access /> */}
-                <div className="test-content"></div>
-              </section>
+                {/** アクセス */}
+                <section className='headbox accessbox-up'>
+                  <Image
+                    className="top_index"
+                    src="/welcome/index_access.png"
+                    alt=""
+                    width={800}
+                    height={300}
+                    priority
+                  />
+                  <Access />
+                </section>
 
-              {/** フッターコンテンツ */}
-              {/** <Footer /> */}
-            </>
+                {/** フッターコンテンツ */}
+                {/** <Footer /> */}
+              </div>
+            </div>
           </DevOnly>
         </div>
       </div>
