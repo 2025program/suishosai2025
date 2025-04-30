@@ -139,7 +139,7 @@ export default function Home() {
                 </section>
 
                 {/** フッターコンテンツ */}
-                {/** <Footer /> */}
+                <Footer />
               </div>
             </div>
           </DevOnly>
