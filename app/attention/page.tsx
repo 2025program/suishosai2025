@@ -3,6 +3,7 @@
 import React from "react";
 import "./attention.css"
 import Image from 'next/image';
+import Footer from '@/components/footer/footer';
 import { useEffect, useRef } from 'react';
 
 export default function attention () {
@@ -12,6 +13,16 @@ export default function attention () {
             {/**ヘッダー */}
             <div className="at-toppers">
                 <picture className="roller">
+                    <source
+                        type=""
+                        media="(min-width: 1400px)"
+                        srcSet="/roller/roller_orange_biggest.png"
+                    />
+                    <source
+                        type=""
+                        media="(min-width: 768px)"
+                        srcSet="/roller/roller_orange_pc.png"
+                    />
                     <Image
                         className="roller_sp"
                         src="/welcome/newscoversp.png"
@@ -26,7 +37,7 @@ export default function attention () {
                 </header>  
             </div>
             <div className="at-pc-box">
-                <div className="at-main">
+                <div className="at_main">
                 <div className="background_about_img" ref={leafRef}>
                         
                         </div>
@@ -36,7 +47,7 @@ export default function attention () {
                         {/**電子マネーの画像を置く */}
                         <Image className="el-money"
                             src="/og-image.jpg"
-                            alt=""
+                            alt="対応電子マネー一覧"
                             width={3000}
                             height={1000}
                         />
@@ -50,7 +61,7 @@ export default function attention () {
                                 <p>総務T</p>
                                 <Image
                                     src="/mappin.png"
-                                    alt=""
+                                    alt="総務の人が来ている服"
                                     width={3000}
                                     height={1000}
                                 />
@@ -59,7 +70,7 @@ export default function attention () {
                                 <p>SP法被</p>
                                 <Image
                                     src="/mappin.png"
-                                    alt=""
+                                    alt="巡回中のSPが羽織ってる服"
                                     width={3000}
                                     height={1000}
                                 />
@@ -68,6 +79,7 @@ export default function attention () {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

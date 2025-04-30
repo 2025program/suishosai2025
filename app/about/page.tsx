@@ -1,6 +1,7 @@
 "use client"
 
 import "./about.css"
+import Footer from '@/components/footer/footer';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 export default function About() {
@@ -23,6 +24,16 @@ export default function About() {
         <div>
             <div className="about_toppers">
                 <picture className="roller">
+                    <source
+                        type=""
+                        media="(min-width: 1400px)"
+                        srcSet="/roller/roller_orange_biggest.png"
+                    />
+                    <source
+                        type=""
+                        media="(min-width: 768px)"
+                        srcSet="/roller/roller_orange_pc.png"
+                    />
                     <Image
                         className="roller_sp"
                         src="/welcome/newscoversp.png"
@@ -91,7 +102,7 @@ export default function About() {
                     <div className="member-picture">
                             <Image
                                src="/member.jpg"
-                               alt=""
+                               alt="総務ず"
                                width={3000}
                                height={1000}
                             />
@@ -99,6 +110,7 @@ export default function About() {
                     
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }

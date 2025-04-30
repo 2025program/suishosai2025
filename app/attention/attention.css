@@ -5,7 +5,6 @@
 }
 
 .header{
-    margin-top: 70px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -95,8 +94,20 @@
     background-repeat: no-repeat;
 }
 
+.at_main::before,
+.at_main::after {
+    z-index: 1;
+}
+
 .el-money{
     width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.payment{
+    align-items: center;
 }
 
 .payment h1,
