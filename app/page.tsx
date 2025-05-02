@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image';
 import "./homepage.css"
 import Form from '@/components/form/form';
@@ -6,17 +8,39 @@ import Access from '@/components/access/access';
 import TopSelect from '@/components/topselect/topselect';
 import Footer from '@/components/footer/footer';
 import { DevOnly } from '@/components/DevOnly';
+import { useRef, useEffect, useState } from 'react';
 
 
 // Homeコンポーネント
 export default function Home() {
+  const headerRef = useRef<HTMLElement>(null);
+  const [spacerHeight, setSpacerHeight] = useState(0);
+  const [isOverflowing, setIsOverflowing] = useState(false);
+
+  useEffect(() => {
+    const updateSizes = () => {
+      if (headerRef.current) {
+        // DOMから高さを取得（offsetHeightを使用）
+        const height = headerRef.current.offsetHeight;
+        setIsOverflowing(height > window.innerHeight);
+        setSpacerHeight(height);
+      }
+    };
+    updateSizes();
+    window.addEventListener('resize', updateSizes);
+    return () => window.removeEventListener('resize', updateSizes);
+  }, []);
+
   return (
     <>
       <div className="body">
         <div className="hidden-x-side">
 
           {/** ヘッダー */}
-          <section className="headtop">
+          <section
+            className={`headtop ${isOverflowing ? 'relative' : 'fixed'}`}
+            ref={headerRef}
+          >
             <div className="headtop-leftarea">
               <div className="headtop-left">
 
@@ -82,65 +106,14 @@ export default function Home() {
 
           </section>
 
+          <div
+            className=""
+            style={{ height: isOverflowing ? 0 : `${spacerHeight}px` }}
+          />
 
           <DevOnly>
             <div className="mid_header">
-              <div className="mid_contenter">
-                {/** マップ */}
-                <section className='headbox mapbox-up'>
-                  <Image
-                    className="top_index"
-                    src="/welcome/index_search.png"
-                    alt=""
-                    width={800}
-                    height={300}
-                    priority
-                  />
-                  <TopSelect />
-                </section>
-
-                {/** フォーム */}
-                <section className='headbox formbox-up'>
-                  <Image
-                    className="top_index"
-                    src="/welcome/index_form.png"
-                    alt=""
-                    width={800}
-                    height={300}
-                    priority
-                  />
-                  <Form />
-                </section>
-
-                {/** ニュース */}
-                <section className="headbox newsbox-up">
-                  <Image
-                    className="top_index"
-                    src="/welcome/index_news.png"
-                    alt=""
-                    width={800}
-                    height={300}
-                    priority
-                  />
-                  <Announce />
-                </section>
-
-                {/** アクセス */}
-                <section className='headbox accessbox-up'>
-                  <Image
-                    className="top_index"
-                    src="/welcome/index_access.png"
-                    alt=""
-                    width={800}
-                    height={300}
-                    priority
-                  />
-                  <Access />
-                </section>
-
-                {/** フッターコンテンツ */}
-                <Footer />
-              </div>
+              <div className="ahfkdaksjhfds"></div>
             </div>
           </DevOnly>
         </div>

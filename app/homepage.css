@@ -19,89 +19,37 @@
 /** ヘッダーの共通デザイン **/
 
 .mid_header {
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.mid_contenter {
-    width: 90%;
-    max-width: 1500px;
-    display: flex;
-    flex-direction: column;
-}
-
-.slidebox-animation {
-    position: absolute;
-    z-index: 1;
-}
-
-.headbox {
-    position: relative;
-    margin-top: 30px;
-    padding-bottom: 30px;
-    margin-bottom: 50px;
-}
-
-.top_index {
-    position: absolute;
-    width: 280px;
-    z-index: -1;
-    top: -63px;
-    left: 10px;
-}
-
-.box-up {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 120px;
-    position: relative;
-    overflow: hidden;
-}
-
-@media (max-width:767px) {
-    .top_index {
-        position: absolute;
-        width: 200px;
-        z-index: -1;
-        top: -46px;
-        left: 10px;
-    }
-}
-
-/** ニュースのヘッダーカラー **/
-.newsbox-up {
-    border-top: #ff9d00 5px solid;
-    background-color: #ffffff;
-}
-
-.mapbox-up {
-    border-top: #ff3d16 5px solid;
-    background-color: #ffffff;
-}
-
-.formbox-up {
-    border-top: #00a5ff 5px solid;
-    background-color: #ffffff;
-}
-
-.accessbox-up {
-    border-top: #ffef3b 5px solid;
-    background-color: #ffffff;
+    background-color: #00a5ff;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    z-index: 5;
 }
 
 /** ヘッダー(一番最初のトップデザイン) **/
+.ahfkdaksjhfds {
+    height: 100vh;
+}
 
 .headtop {
-    position: relative;
     width: 100%;
-    min-height: 90vh;
-    overflow: hidden;
+    top: 0;
     margin-bottom: 20px;
+    min-height: 90vh;
+}
+
+.headtop.fixed {
+    position: fixed;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.headtop.relative {
+    position: relative;
 }
 
 .headtop-leftarea {
