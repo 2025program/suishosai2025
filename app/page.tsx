@@ -8,33 +8,32 @@ import Access from '@/components/access/access';
 import TopSelect from '@/components/topselect/topselect';
 import Footer from '@/components/footer/footer';
 import { DevOnly } from '@/components/DevOnly';
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useState, useLayoutEffect } from 'react';
 
 
 // Homeコンポーネント
 export default function Home() {
-  const headerRef = useRef<HTMLElement>(null);
-  const [spacerHeight, setSpacerHeight] = useState(0);
-  const [isOverflowing, setIsOverflowing] = useState(true);
+  const headerRef = useRef<HTMLElement>(null)
+  const [spacerHeight, setSpacerHeight] = useState(0)
+  const [isOverflowing, setIsOverflowing] = useState(true)  // 初期 true でも OK（layoutEffect で描画前に更新されます）
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const updateSizes = () => {
-      if (headerRef.current) {
-        const height = headerRef.current.offsetHeight;
+      if (!headerRef.current) return
+      const height = headerRef.current.offsetHeight
 
-        // 767px以下ならバッファ100、それ以上は0
-        const isMobile = window.innerWidth <= 767;
-        const buffer = isMobile ? 100 : 0;
+      // スマホ判定: 767px以下なら buffer=100、それ以上は0
+      const isMobile = window.innerWidth <= 767
+      const buffer = isMobile ? 100 : 0
 
-        setIsOverflowing(height > window.innerHeight + buffer);
-        setSpacerHeight(height);
-      }
-    };
+      setIsOverflowing(height > window.innerHeight + buffer)
+      setSpacerHeight(height)
+    }
 
-    updateSizes();
-    window.addEventListener('resize', updateSizes);
-    return () => window.removeEventListener('resize', updateSizes);
-  }, []);
+    updateSizes()
+    window.addEventListener('resize', updateSizes)
+    return () => window.removeEventListener('resize', updateSizes)
+  }, [])
 
   return (
     <>
