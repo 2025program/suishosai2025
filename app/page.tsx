@@ -20,12 +20,19 @@ export default function Home() {
   useLayoutEffect(() => {
     const updateSizes = () => {
       if (!headerRef.current) return
+
       const height = headerRef.current.offsetHeight
+      const width = window.innerWidth
 
-      // スマホ判定: 767px以下なら buffer=100、それ以上は0
-      const isMobile = window.innerWidth <= 767
-      const buffer = isMobile ? 100 : 0
+      // 幅が767pxより大きければ常に relative
+      if (width > 767) {
+        setIsOverflowing(true)
+        setSpacerHeight(height)
+        return
+      }
 
+      // 767px以下（スマホ想定）はバッファありの判定
+      const buffer = 100  // 必要に応じて調整
       setIsOverflowing(height > window.innerHeight + buffer)
       setSpacerHeight(height)
     }
