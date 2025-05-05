@@ -15,14 +15,14 @@ import { useRef, useEffect, useState } from 'react';
 export default function Home() {
   const headerRef = useRef<HTMLElement>(null);
   const [spacerHeight, setSpacerHeight] = useState(0);
-  const [isOverflowing, setIsOverflowing] = useState(false);
+  const [isOverflowing, setIsOverflowing] = useState(true);
 
   useEffect(() => {
     const updateSizes = () => {
       if (headerRef.current) {
-        // DOMから高さを取得（offsetHeightを使用）
         const height = headerRef.current.offsetHeight;
-        setIsOverflowing(height > window.innerHeight);
+        const buffer = 100;
+        setIsOverflowing(height > window.innerHeight + buffer);
         setSpacerHeight(height);
       }
     };
