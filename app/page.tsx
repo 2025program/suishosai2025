@@ -19,13 +19,23 @@ export default function Home() {
 
   useEffect(() => {
     const updateSizes = () => {
-      if (headerRef.current) {
-        const height = headerRef.current.offsetHeight;
-        const buffer = 100;
-        setIsOverflowing(height > window.innerHeight + buffer);
-        setSpacerHeight(height);
-      }
+      if (!headerRef.current) return;
+      const headerH = headerRef.current.offsetHeight;
+
+      // ツールバー込みの“真の”画面高さ
+      const fullH = window.visualViewport
+        // 現代ブラウザ: 表示領域の高さ + 上部オフセット
+        ? window.visualViewport.height + window.visualViewport.offsetTop
+        // 古いブラウザフォールバック①: OS が使える画面高さ
+        : window.screen?.availHeight ||
+        // 古いブラウザフォールバック②: 最終手段
+        window.innerHeight;
+
+      setIsOverflowing(headerH > fullH);
+      setSpacerHeight(headerH);
     };
+
+    // 初回実行＆リサイズで更新
     updateSizes();
     window.addEventListener('resize', updateSizes);
     return () => window.removeEventListener('resize', updateSizes);
