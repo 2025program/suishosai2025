@@ -32,7 +32,7 @@ export default function Home() {
       }
 
       // 767px以下（スマホ想定）はバッファありの判定
-      const buffer = 100  // 必要に応じて調整
+      const buffer = 200  // 必要に応じて調整
       setIsOverflowing(height > window.innerHeight + buffer)
       setSpacerHeight(height)
     }
