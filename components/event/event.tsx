@@ -193,7 +193,7 @@ const EventPage: React.FC = () => {
                                     <div className="leftnotbox">
                                         <Image
                                             className="piceve"
-                                            src="/welcome/logopc.png"
+                                            src="/welcome/logo.png"
                                             alt="画像を読み込めませんでした"
                                             width={1000}
                                             height={1000}

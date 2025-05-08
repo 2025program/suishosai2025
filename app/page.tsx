@@ -57,13 +57,13 @@ export default function Home() {
 
                 <div className="headtop-themelogo">
                   <picture>
-                    <source
+                    {/**<source
                       media="(min-width:768px)"
                       srcSet="/welcome/logopc.png"
-                    />
+                    /> **/}
                     <Image
                       className="headtop-sp img"
-                      src="/welcome/logosp.png"
+                      src="/welcome/logo.png"
                       alt=""
                       width={900}
                       height={850}

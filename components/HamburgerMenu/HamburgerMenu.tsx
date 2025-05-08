@@ -40,7 +40,7 @@ const HamburgerMenu: React.FC = () => {
                         <div className={"fusion-left" + (isActive ? " fusion-active" : "")} onClick={toggleMenu}>
                             <Image
                                 className="fusion-logo"
-                                src="/welcome/logopc.png"
+                                src="/welcome/logo.png"
                                 alt="logo"
                                 width={594}
                                 height={197}

@@ -7,6 +7,7 @@ import {
     faLine,
 } from "@fortawesome/free-brands-svg-icons";
 import "./footer.css";
+import Image from 'next/image';
 
 export default function Footer() {
     const [currentUrl, setCurrentUrl] = useState("");
@@ -61,6 +62,14 @@ export default function Footer() {
 
     return (
         <div className="_fot_">
+            <div>
+                <Image
+                    src="/welcome/logo.png"
+                    alt="logo"
+                    width={3000}
+                    height={1000}
+                />
+            </div>
             <h1>〈 SHARE 〉</h1>
             <div className="footer-icon">
                 <button

@@ -20,6 +20,7 @@ export default function About() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+
     return (
         <div>
             <div className="about_toppers">
