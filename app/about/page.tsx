@@ -25,18 +25,13 @@ export default function About() {
             <div className="about_toppers">
                 <picture className="roller">
                     <source
-                        type=""
-                        media="(min-width: 1400px)"
-                        srcSet="/roller/roller_orange_biggest.png"
-                    />
-                    <source
-                        type=""
+                        type="png"
                         media="(min-width: 768px)"
-                        srcSet="/roller/roller_orange_pc.png"
+                        srcSet="/header/header-for-pc.png"
                     />
                     <Image
                         className="roller_sp"
-                        src="/welcome/newscoversp.png"
+                        src="/header/header-for-sp.png"
                         alt=""
                         width={3000}
                         height={1000}
