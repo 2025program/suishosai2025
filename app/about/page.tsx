@@ -26,7 +26,7 @@ export default function About() {
             <div className="about_toppers">
                 <picture className="roller">
                     <source
-                        type="png"
+                        type="image/png"
                         media="(min-width: 768px)"
                         srcSet="/header/header-for-pc.png"
                     />
@@ -91,7 +91,7 @@ export default function About() {
                         <h3>システム・デザイン・設計</h3>
                         <p>pent</p>
                         <h3>ロゴ制作</h3>
-                        <p>ああああ</p>
+                        <p>菊池真帆</p>
 
                         <p>協力してくださった皆さん、ありがとうございました</p>
                     </div>

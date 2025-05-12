@@ -14,7 +14,7 @@ export default function attention () {
             <div className="at-toppers">
                 <picture className="roller">
                     <source
-                        type="png"
+                        type="image/png"
                         media="(min-width: 768px)"
                         srcSet="/header/header-for-pc.png"
                     />
