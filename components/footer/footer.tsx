@@ -64,6 +64,7 @@ export default function Footer() {
         <div className="_fot_">
             <div>
                 <Image
+                    className="fot-logo"
                     src="/welcome/logo.png"
                     alt="logo"
                     width={3000}
