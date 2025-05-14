@@ -1,5 +1,3 @@
-"use client"
-
 import Image from 'next/image';
 import "./homepage.css"
 import Form from '@/components/form/form';
@@ -8,39 +6,10 @@ import Access from '@/components/access/access';
 import TopSelect from '@/components/topselect/topselect';
 import Footer from '@/components/footer/footer';
 import { DevOnly } from '@/components/DevOnly';
-import { useRef, useState, useLayoutEffect } from 'react';
 
 
 // Homeコンポーネント
 export default function Home() {
-  const headerRef = useRef<HTMLElement>(null)
-  const [spacerHeight, setSpacerHeight] = useState(0)
-  const [isOverflowing, setIsOverflowing] = useState(true)  // 初期 true でも OK（layoutEffect で描画前に更新されます）
-
-  useLayoutEffect(() => {
-    const updateSizes = () => {
-      if (!headerRef.current) return
-
-      const height = headerRef.current.offsetHeight
-      const width = window.innerWidth
-
-      // 幅が767pxより大きければ常に relative
-      if (width > 767) {
-        setIsOverflowing(true)
-        setSpacerHeight(height)
-        return
-      }
-
-      // 767px以下（スマホ想定）はバッファありの判定
-      const buffer = 200  // 必要に応じて調整
-      setIsOverflowing(height > window.innerHeight + buffer)
-      setSpacerHeight(height)
-    }
-
-    updateSizes()
-    window.addEventListener('resize', updateSizes)
-    return () => window.removeEventListener('resize', updateSizes)
-  }, [])
 
   return (
     <>
@@ -49,18 +18,17 @@ export default function Home() {
 
           {/** ヘッダー */}
           <section
-            className={`headtop ${isOverflowing ? 'relative' : 'fixed'}`}
-            ref={headerRef}
+            className="headtop"
           >
             <div className="headtop-leftarea">
               <div className="headtop-left">
 
                 <div className="headtop-themelogo">
                   <picture>
-                    {/**<source
+                    <source
                       media="(min-width:768px)"
-                      srcSet="/welcome/logopc.png"
-                    /> **/}
+                      srcSet="/welcome/logo.png"
+                    />
                     <Image
                       className="headtop-sp img"
                       src="/welcome/logo.png"
@@ -116,11 +84,6 @@ export default function Home() {
             <a href="/attention" className='payment-btn'>お支払いについて</a>
 
           </section>
-
-          <div
-            className=""
-            style={{ height: isOverflowing ? 0 : `${spacerHeight}px` }}
-          />
 
           <DevOnly>
             <div className="mid_header">
