@@ -87,7 +87,10 @@ export default function Home() {
 
           <DevOnly>
             <div className="mid_header">
-              <div className="ahfkdaksjhfds"></div>
+              <TopSelect />
+              <Form />
+              <Announce />
+              <Access />
             </div>
           </DevOnly>
         </div>
