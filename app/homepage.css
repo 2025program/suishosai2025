@@ -24,15 +24,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #dcdcdc;
+    background-color: #e0e0e0;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     z-index: 5;
-}
-
-/** ヘッダー(一番最初のトップデザイン) **/
-.ahfkdaksjhfds {
-    height: 100vh;
 }
 
 .headtop {

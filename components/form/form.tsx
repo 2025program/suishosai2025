@@ -14,9 +14,6 @@ export default function Form() {
                         height={1000}
                         priority
                     />
-                    <h1>
-                        翠翔祭グランプリ
-                    </h1>
                 </div>
                 <div className="form_content">
                     <div className="formabout">
