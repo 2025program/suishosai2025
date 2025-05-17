@@ -62,15 +62,6 @@ export default function Footer() {
 
     return (
         <div className="_fot_">
-            <div>
-                <Image
-                    className="fot-logo"
-                    src="/welcome/logo.png"
-                    alt="logo"
-                    width={3000}
-                    height={1000}
-                />
-            </div>
             <h1>〈 SHARE 〉</h1>
             <div className="footer-icon">
                 <button
@@ -95,9 +86,12 @@ export default function Footer() {
                     <FontAwesomeIcon icon={faLine} />
                 </button>
             </div>
+            <div className="show">
+                <a href="/about">翠翔祭2025について詳しく</a>
+                <a href="/attention">支払方法・諸注意について</a>
+            </div>
             <p>翠翔祭2025</p>
             <p>@神奈川県立横浜翠嵐高等学校</p>
-            <a href="/about" className="showabout">翠翔祭2025について詳しく</a>
         </div>
     );
 }
