@@ -1,4 +1,4 @@
-<div className="background_about_img" ref={leafRef}>
+<div className="background-about-img" ref={leafRef}>
                         <Image
                             src="/about/leaf.png"
                             alt=""
@@ -12,16 +12,16 @@
                         <source
                             type=""
                             media="(min-width: 1400px)"
-                            srcSet="/roller/roller_orange_biggest.png"
+                            srcSet="/roller/roller-orange-biggest.png"
                         />
                         <source
                             type=""
                             media="(min-width: 768px)"
-                            srcSet="/roller/roller_orange_pc.png"
+                            srcSet="/roller/roller-orange-pc.png"
                         />
                         <Image
-                            className="roller_sp"
-                            src="/roller/roller_orange_sp.png"
+                            className="roller-sp"
+                            src="/roller/roller-orange-sp.png"
                             alt=""
                             width={3000}
                             height={1000}

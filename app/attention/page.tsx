@@ -39,6 +39,7 @@ export default function attention () {
                     <div className="payment">
                         <h1>《お支払いについて》</h1>
                         <p>調理食販企画でのお支払いは電子マネーのみとなります。校内でのチャージはできませんので、駅などで事前に十分にチャージをしたうえでお越しください。</p>
+                        <p>（食堂は現金のみとなります）</p>
                         {/**電子マネーの画像を置く */}
                         <Image className="el-money"
                             src="/og-image.jpg"

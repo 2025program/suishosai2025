@@ -23,7 +23,7 @@ export default function About() {
 
     return (
         <div>
-            <div className="about_toppers">
+            <div className="about-toppers">
                 <picture className="roller">
                     <source
                         type="image/png"
@@ -31,7 +31,7 @@ export default function About() {
                         srcSet="/header/header-for-pc.png"
                     />
                     <Image
-                        className="roller_sp"
+                        className="roller-sp"
                         src="/header/header-for-sp.png"
                         alt=""
                         width={3000}
@@ -46,19 +46,24 @@ export default function About() {
                 </header>
             </div>
             <div className="about-pc-box">
-                <div className="about_main">
+                <div className="about-main">
 
-                    <div className="background_about_img" ref={leafRef}>
+                    <div className="background-about-img" ref={leafRef}>
                         
                     </div>
 
-                    <div className="about_suiran">
+                    <div className="about-suiran">
                         <h1>《翠翔祭について》</h1>
                         <p>翠翔祭とは毎年6月末に行われる神奈川県立横浜翠嵐高校の文化祭です。
                             コロナの年度は一般公開できなかったものの、去年から一般公開を再開し、約1万人の方々に来場いただきました。
                             来場お待ちしております。</p>
                     </div>
-                    <div className="about_top_member">
+                    <div className="about-theme">
+                        <h1>《テーマ：Neoについて》</h1>
+                        <p>Neoはギリシャ語で「新しい」「復活の」などの意味を持つ言葉です。
+                           コロナ以前の方法を吟味し、残すべきものは残し、変えるべきものは変えるという目標の為にこのテーマを設定しました。</p>
+                    </div>
+                    <div className="about-top-member">
                         <h1>《翠翔祭実行委員会紹介》</h1>
                         <h3>2025年度全日制翠翔祭実行委員長</h3>
                         <h3>池田晴彦</h3>
@@ -84,7 +89,7 @@ export default function About() {
                         <h3>-後夜祭・ステージ部統括責任者-</h3>
                         <p>富永恵未</p>
                     </div>
-                    <div className="about_site">
+                    <div className="about-site">
                         <h2>〈サイト開発担当〉</h2>
                         <h3>サイト監修</h3>
                         <p>水谷駿佑</p>
