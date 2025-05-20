@@ -68,6 +68,9 @@ const HamburgerMenu: React.FC = () => {
                                         <a href="/timetable">TIMETABLE</a>
                                     </li>
                                     <li className="fusion-item">
+                                        <a href="/form">FORM</a>
+                                    </li>
+                                    <li className="fusion-item">
                                         <a href="/about">ABOUT</a>
                                     </li>
                                     <li className="fusion-item">
