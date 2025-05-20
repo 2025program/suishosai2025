@@ -9,6 +9,7 @@
     width: 100%;
 }
 
+/** トップ画像用 */
 .roller {
     position: absolute;
     top: 0;
@@ -21,14 +22,13 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin-bottom: 20px;
     height: 23vw;
-    z-index: 2;
 }
 
-.e-title {
+.title {
     font-family: Impact;
     font-size: 10vw;
+    z-index: 3;
 }
 
 @media (max-width: 767px) {
@@ -46,7 +46,7 @@
 }
 
 @media (max-width: 768px) {
-    .e-title {
+    .title {
         font-size: 12vw;
     }
 
@@ -67,9 +67,13 @@
         height: 300px;
     }
 
-    .e-title {
+    .title {
         font-size: 140px;
     }
+}
+
+.toppers {
+    padding-bottom: 20px;
 }
 
 .e-content {

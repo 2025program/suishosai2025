@@ -31,7 +31,7 @@ export default function Form() {
                                         FORM
                                     </h1>
                                 </header>
-                            </div>
+                </div>
                 {/**翠翔祭グランプリ */}
                 <div className="form_back">
                     <Image
