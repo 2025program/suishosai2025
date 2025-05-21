@@ -124,6 +124,11 @@
     margin-bottom: 30px;
 }
 
+.formhow a{
+    display: block;
+    text-align: center;
+}
+
 .form_bold {
     font-weight: bold;
 }
@@ -168,3 +173,4 @@
 .bumons :hover{
     color: #00a5ff
 }
+

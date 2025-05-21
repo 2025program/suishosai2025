@@ -56,10 +56,10 @@ export default function Form() {
                         <p>校内にあるパンフレットからも投票可能です。</p>
                         <p>1人1回、各部門1団体投票してください。ただし、自分が所属する団体には投票できません。</p>
                         <h3 className="bumon">〈各種投票フォーム〉</h3>
-                        <p className="bumons">校内イベント部門</p>
-                        <p className="bumons">食品販売部門</p>
-                        <p className="bumons">ステージ部門</p>
-                        <p className="bumons">立て看板部門</p>
+                        <a href="" className="bumons">校内イベント部門</a>
+                        <a href="" className="bumons">食品販売部門</a>
+                        <a href="" className="bumons">ステージ部門</a>
+                        <a href="" className="bumons">立て看板部門</a>
                     </div>
                 </div>
                 {/**<div className="form_tap">

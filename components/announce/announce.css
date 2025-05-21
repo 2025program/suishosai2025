@@ -6,7 +6,7 @@
 }
 
 .blackboard-box {
-    width: 90%;
+    width: 80%;
     max-width: 1500px;
     max-height: 70vh;
     min-height: 20vh;
@@ -15,6 +15,9 @@
     scrollbar-width: none;
     margin: 1em 0;
     padding: 0em 1em 0 1em;
+    border-width:3px;
+	border-color: #000000;
+	border-style: solid;
 }
 
 .blackboard-box::-webkit-scrollbar {

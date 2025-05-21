@@ -85,13 +85,16 @@ export default function Home() {
 
           </section>
 
-          <DevOnly>
-            <div className="mid_header">
-              <TopSelect />
-              <Announce />
-              <Access />
-            </div>
-          </DevOnly>
+          
+          <div className="mid_header">
+            <h2>SEARCH</h2>
+            <TopSelect />
+            <h2>NEWS</h2>
+            <Announce />
+            <h2>ACCEEE</h2>
+            <Access />
+          </div>
+          
         </div>
         <Footer />
       </div>

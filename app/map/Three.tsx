@@ -151,7 +151,27 @@ export default function Three() {
 
     return (
         <div className={styles.outerContainer}>
-            {/* ヘッダー：サーチボックス */}
+            {/**トップ画像 */}
+            <div className="toppers">
+                <picture className="roller">
+                    <source
+                       type="image/png"
+                       media="(min-width: 768px)"
+                       srcSet="/header/header-for-pc.png"
+                    />
+                    <img
+                        className="roller-sp"
+                        src="/header/header-for-sp.png"
+                        alt=""
+                        style={{ width: "100%", height: "auto" }}
+                    />
+                </picture>
+                <header className="h-header">
+                    <h1 className="title">MAP</h1>
+                </header>
+            </div>
+
+            {/* サーチボックス */}
             <div className={styles.header}>
                 <input
                     type="text"
@@ -251,9 +271,10 @@ export default function Three() {
                                         height: "100%",
                                     }}
                                 >
-                                    <img
+                                    <Image
                                         src={`/maps/map-floor${floor}.svg`}
                                         alt={`${floor}階`}
+                                        fill
                                         className={styles.mapImage}
                                     />
                                     {selectedItem && selectedItem.floor === floor && (

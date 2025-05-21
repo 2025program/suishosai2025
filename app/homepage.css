@@ -148,3 +148,8 @@
         font-size: 1.3rem;
     }
 }
+
+.mid_header h2{
+    font-size: 60px;
+    font-family: Impact;
+}
