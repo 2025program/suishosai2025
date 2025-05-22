@@ -1,6 +1,7 @@
 .form {
     width: 100%;
-    overflow-y: hidden;
+    overflow: hidden;
+    position: relative;
 }
 
 .form_back {
@@ -69,6 +70,68 @@
     margin-bottom: 30px;
 }
 
+.background-about-img {
+    opacity: 0.2;
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-60%, -30%);
+    will-change: transform;
+}
+
+.background-about-img-set {
+    opacity: 0.2;
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    right: 50%;
+    transform: translate(60%, -30%) scale(-1, 1);
+    will-change: transform;
+}
+
+.cloud_png {
+    width: clamp(250px, 50vw, 600px);
+}
+
+.bumonbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.bumonsbox {
+    height: 100px;
+    border-left: 2px rgba(193, 141, 92, 0.663) solid;
+    border-right: 2px rgba(193, 141, 92, 0.663) solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bumonsboxl {
+    height: 100px;
+    border-right: 2px rgba(193, 141, 92, 0.663) solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bumonsboxr {
+    height: 100px;
+    border-left: 2px rgba(193, 141, 92, 0.663) solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bumons {
+    font-weight: bold;
+}
 
 @media (max-width: 767px) {
     .form_back h1 {

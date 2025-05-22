@@ -85,16 +85,34 @@ export default function Home() {
 
           </section>
 
-          
+
           <div className="mid_header">
-            <h2>SEARCH</h2>
+            <div className="headerbox_top">
+              <div className="headerbox_left"></div>
+              <div className="headerbox_right"></div>
+              <div className="headerbox_titlearea headerbox_search">
+                <h1 className=''>SEARCH</h1>
+              </div>
+            </div>
             <TopSelect />
-            <h2>NEWS</h2>
+            <div className="headerbox_top">
+              <div className="headerbox_left"></div>
+              <div className="headerbox_right"></div>
+              <div className="headerbox_titlearea headerbox_news">
+                <h1 className=''>NEWS</h1>
+              </div>
+            </div>
             <Announce />
-            <h2>ACCEEE</h2>
+            <div className="headerbox_top">
+              <div className="headerbox_left"></div>
+              <div className="headerbox_right"></div>
+              <div className="headerbox_titlearea headerbox_access">
+                <h1 className=''>ACCESS</h1>
+              </div>
+            </div>
             <Access />
           </div>
-          
+
         </div>
         <Footer />
       </div>

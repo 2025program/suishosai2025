@@ -1,7 +1,26 @@
+"use client"
+
 import "./form.css"
 import Image from 'next/image';
+import { useEffect, useRef } from 'react';
 
 export default function Form() {
+    const leafRef = useRef<HTMLDivElement>(null);
+    const leaf = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!leafRef.current) return;
+            if (!leaf.current) return;
+            const offset = window.scrollY * 0.1;
+            leafRef.current.style.transform = `translate(-60%, calc(-30% + ${offset}px))`;
+            leaf.current.style.transform = `translate(60%, calc(-30% + ${offset}px)) scale(-1, 1)`;
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <>
             <div className="form">
@@ -15,16 +34,46 @@ export default function Form() {
                         priority
                     />
                 </div>
+                <div className="background-about-img" ref={leafRef}>
+                    <Image
+                        src="/about/cloud.png"
+                        className="cloud_png"
+                        alt="cloud_png"
+                        width={600}
+                        height={300}
+                        priority
+                    />
+                </div>
+                <div className="background-about-img-set" ref={leaf}>
+                    <Image
+                        src="/about/cloud.png"
+                        className="cloud_png"
+                        alt="cloud_png"
+                        width={600}
+                        height={300}
+                        priority
+                    />
+                </div>
                 <div className="form_content">
                     <div className="formabout">
                         <h2>《概要》</h2>
                         <p>各部門でのグランプリを決めます。</p>
                         <p>生徒と来場者の皆さんに投票を行ってもらい、各部門で最も票を得た団体がグランプリ獲得です。</p>
                         <h3 className="bumon">〈部門紹介〉</h3>
-                        <p className="bumons">校内イベント部門</p>
-                        <p className="bumons">食品販売部門</p>
-                        <p className="bumons">ステージ部門</p>
-                        <p className="bumons">総合部門</p>
+                        <div className="bumonbox">
+                            <div className="bumonsboxl">
+                                <p className="bumons">校内部門</p>
+                            </div>
+                            <div className="bumonsbox">
+                                <p className="bumons">食品部門</p>
+                            </div>
+                            <div className="bumonsbox">
+                                <p className="bumons">ステージ部門</p>
+                            </div>
+                            <div className="bumonsboxr">
+                                <p className="bumons">総合部門</p>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="formhow">
