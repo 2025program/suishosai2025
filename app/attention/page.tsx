@@ -50,7 +50,7 @@ export default function attention () {
                     </div>
                     <div className="guide">
                         <h1>《お困りの時は》</h1>
-                        <p>翠翔祭総務部またはSP部に声をかけてください。</p>
+                        <p>2棟1階生徒会室までお越しいただくか、巡回中の翠翔祭総務部またはSP部に声をかけてください。</p>
                         {/**総務Tと法被の画像を置く */}
                         <div className="clothes">
                             <div>
