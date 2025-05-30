@@ -39,7 +39,7 @@ export const festivalItems: FestivalItem[] = [
     { title: 'をかしなお菓子', attributes: [Sun, Soup], floor: 1, x: 111, y: 111, class: "2-1", location: "3-7"},
     { title: '純喫茶　翠嵐浪漫', attributes: [Sun, Soup], floor: 1, x: 111, y: 111, class: "2-2", location: "2-2"},
     { title: 'パイレーツ呪われた島', attributes: [Sun], floor: 1, x: 111, y: 111, class: "2-3", location: "2-3"},
-    { title: 'HASEGAWAFFLEHASEGAWAFFLE', attributes: [Sun, Soup], floor: 1, x: 111, y: 111, class: "2-4", location: "屋外"},
+    { title: 'HASEGAWAFFLE', attributes: [Sun, Soup], floor: 1, x: 111, y: 111, class: "2-4", location: "屋外"},
     { title: 'マッスルカフェ！', attributes: [Sun, Soup], floor: 1, x: 111, y: 111, class: "2-5", location: "屋外"},
     { title: 'トイ・ニイベ・マニア！', attributes: [Sun], floor: 1, x: 111, y: 111, class: "2-6", location: "2-6"},
     { title: '翠嵐クレープ～モリヤの翠イーツ屋さん～', attributes: [Sun, Soup], floor: 1, x: 111, y: 111, class: "2-7", location: "屋外"},
