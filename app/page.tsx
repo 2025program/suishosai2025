@@ -85,7 +85,6 @@ export default function Home() {
 
           </section>
 
-
           <div className="mid_header">
             <div className="headerbox_top">
               <div className="headerbox_left"></div>
@@ -95,6 +94,13 @@ export default function Home() {
               </div>
             </div>
             <TopSelect />
+            <div className="headerbox_top">
+              <div className="headerbox_left"></div>
+              <div className="headerbox_right"></div>
+              <div className="headerbox_titlearea headerbox_form">
+                <h1 className=''>FORM</h1>
+              </div>
+            </div>
             <div className="headerbox_top">
               <div className="headerbox_left"></div>
               <div className="headerbox_right"></div>
@@ -112,6 +118,7 @@ export default function Home() {
             </div>
             <Access />
           </div>
+
 
         </div>
         <Footer />
