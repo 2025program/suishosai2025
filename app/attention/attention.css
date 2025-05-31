@@ -118,12 +118,7 @@
 
 .payment h2,
 .guide h2{
-    font-size: clamp(18px, 3.3vw, 28px);
-}
-
-.payment h3,
-.guide h3{
-    font-size: clamp(17px, 2.5vw, 23px);
+    font-size: clamp(17px, 3.3vw, 23px);
 }
 
 .payment p,
