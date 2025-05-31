@@ -13,13 +13,7 @@ export default function Develop() {
     return (
         <>
             <div className="testbox"></div>
-            <div className="headerbox_top">
-                <div className="headerbox_left"></div>
-                <div className="headerbox_right"></div>
-                <div className="headerbox_titlearea">
-                    <h1>Test Title</h1>
-                </div>
-            </div>
+            <Form />
             <div className="testbox"></div>
         </>
     );

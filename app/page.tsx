@@ -101,6 +101,9 @@ export default function Home() {
                 <h1 className=''>FORM</h1>
               </div>
             </div>
+            <DevOnly>
+              <Form />
+            </DevOnly>
             <div className="headerbox_top">
               <div className="headerbox_left"></div>
               <div className="headerbox_right"></div>

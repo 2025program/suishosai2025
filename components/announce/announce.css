@@ -71,6 +71,7 @@
 
 .box-010 p {
     margin: 0;
+    font-size: 15px;
 }
 
 @media (max-width: 767px) {
