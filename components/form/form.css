@@ -45,7 +45,7 @@
 
 .formhow {
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .form_bold {
@@ -121,4 +121,8 @@
     .form_content h2 {
         font-size: clamp(24px, 5vw, 30px);
     }
+}
+
+.anc{
+    margin-bottom: 40px;
 }
