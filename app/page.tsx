@@ -121,10 +121,8 @@ export default function Home() {
             </div>
             <Access />
           </div>
-
-
+          <Footer />
         </div>
-        <Footer />
       </div>
     </>
   );

@@ -9,6 +9,13 @@ import {
     FacebookIcon,
 } from 'next-share'
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faXTwitter,
+    faFacebook,
+    faLine,
+} from "@fortawesome/free-brands-svg-icons";
+
 export default function Footer() {
 
     return (
@@ -19,20 +26,20 @@ export default function Footer() {
                     url={'https://suishousai2025.vercel.app/'}
                     title={'6/28-29にかけて翠翔祭2025が開催中！ぜひご来場ください！'}
                 >
-                    <TwitterIcon size={32} round />
+                    <FontAwesomeIcon icon={faXTwitter} size="lg" />
                 </TwitterShareButton>
                 <FacebookShareButton
                     url={'https://suishousai2025.vercel.app/'}
                     quote={'6/28-29にかけて翠翔祭2025が開催中！ぜひご来場ください！'}
                     hashtag={'#翠翔祭2025'}
                 >
-                    <FacebookIcon size={32} round />
+                    <FontAwesomeIcon icon={faFacebook} size="lg" />
                 </FacebookShareButton>
                 <LineShareButton
                     url={'https://suishousai2025.vercel.app/'}
                     title={'6/28-29にかけて翠翔祭2025が開催中！ぜひご来場ください！'}
                 >
-                    <LineIcon />
+                    <FontAwesomeIcon icon={faLine} size="lg" />
                 </LineShareButton>
             </div>
             <div className="show">
