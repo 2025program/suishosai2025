@@ -19,8 +19,8 @@
     overflow: hidden;
     width: 30vw;
     height: auto;
-    min-width: 300px;
-    max-width: 600px;
+    min-width: 330px;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,6 +39,7 @@
 .warning-text {
     font-size: clamp(20px, 2vw, 30px);
     border-bottom: 2px red solid;
+    font-weight: bold;
 }
 
 .warning-close {

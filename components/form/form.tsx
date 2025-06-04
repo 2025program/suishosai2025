@@ -69,7 +69,7 @@ export default function Form() {
                     <div className="form_back">
                         <Image
                             className="form_topper"
-                            src="/about/form.png"
+                            src="/about/raijousha.png"
                             alt=""
                             width={2000}
                             height={1000}

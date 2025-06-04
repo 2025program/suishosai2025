@@ -155,13 +155,13 @@ export default function Three() {
             <div className="toppers">
                 <picture className="roller">
                     <source
-                       type="image/png"
-                       media="(min-width: 768px)"
-                       srcSet="/header/header-for-pc.png"
+                        type="image/png"
+                        media="(min-width: 768px)"
+                        srcSet="/header/header-leaf.png"
                     />
                     <img
                         className="roller-sp"
-                        src="/header/header-for-sp.png"
+                        src="/header/header-leaf.png"
                         alt=""
                         style={{ width: "100%", height: "auto" }}
                     />

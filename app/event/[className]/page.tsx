@@ -8,7 +8,6 @@ import Image from "next/image";
 import { festivalItems } from "@/utils/festival";
 import { FestivalDetail, festivalDetail } from "@/utils/festivaldetail";
 import { FestivalItem } from "@/types/festival";
-import { supabase } from "@/utils/supabase/supabase";
 // 料金情報のインポート
 import { festivalPricing } from "@/utils/festivalPrice";
 
@@ -21,8 +20,6 @@ export default function ClassPage() {
     const { className } = params;
     const [event, setEvent] = useState<FestivalItem | null>(null);
     const [detail, setDetail] = useState<FestivalDetail | null>(null);
-    // 混雑状況ではなくステータスメッセージを扱う
-    const [statusMessage, setStatusMessage] = useState<string | null>(null);
 
     useEffect(() => {
         if (className) {
@@ -45,27 +42,6 @@ export default function ClassPage() {
             }
         }
     }, [className, router]);
-
-    // イベントが取得できたら、Supabase からステータスメッセージを取得
-    useEffect(() => {
-        async function fetchStatusMessage() {
-            if (event) {
-                const { data, error } = await supabase
-                    .from("status")
-                    .select("status")
-                    .eq("name", event.title)
-                    .single();
-                if (error) {
-                    console.error("ステータスメッセージの取得エラー", error);
-                    return;
-                }
-                if (data) {
-                    setStatusMessage(data.status);
-                }
-            }
-        }
-        fetchStatusMessage();
-    }, [event]);
 
     // イベントに対応する料金情報を取得
     const pricingInfo = festivalPricing.find(
@@ -92,16 +68,6 @@ export default function ClassPage() {
 
                 {/* イベントタイトル */}
                 <h1 className="">{event.title}</h1>
-
-                {/* ステータスメッセージの表示 */}
-                <div className="">
-                    <p className="">お知らせ</p>
-                    <p className="">
-                        {statusMessage !== null
-                            ? statusMessage
-                            : "現在お知らせはありません。"}
-                    </p>
-                </div>
 
                 <div className="">
                     <p className="">内容</p>
