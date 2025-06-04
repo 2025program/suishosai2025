@@ -4,8 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import styles from "./Map.module.css";
 import { normalizeSearchString } from "@/utils/normalizeKana";
-import { FestivalItem } from "@/types/festival";
-import { festivalItems } from "@/utils/festival";
+import { FestivalItem, festivalItems } from "@/utils/festival";
 import Image from "next/image";
 
 // 基準解像度（最大サイズ：1290×967px、アスペクト比 4:3）

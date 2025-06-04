@@ -85,7 +85,7 @@ const EventPage: React.FC = () => {
     return (
         <main className="eventcontent">
             {/* ヘッダー */}
-             <div className="toppers">
+            <div className="toppers">
                 <picture className="roller">
                     <source
                         type="image/png"
@@ -100,12 +100,12 @@ const EventPage: React.FC = () => {
                         height={1000}
                         priority
                     />
-                    </picture>
-                    <header className="header">
+                </picture>
+                <header className="header">
                     <h1 className="title">
                         EVENT
                     </h1>
-                    </header>
+                </header>
             </div>
 
             {/* メインコンテンツ */}
