@@ -4,6 +4,7 @@ export type FestivalDetail = {
 }
 
 export const festivalDetail: FestivalDetail[] = [
+    //1年
     { id: 1, detail: "" },
     { id: 2, detail: "" },
     { id: 3, detail: "" },
@@ -13,6 +14,7 @@ export const festivalDetail: FestivalDetail[] = [
     { id: 7, detail: "" },
     { id: 8, detail: "" },
     { id: 9, detail: "" },
+    //2年
     { id: 10, detail: "" },
     { id: 11, detail: "" },
     { id: 12, detail: "" },
@@ -22,6 +24,7 @@ export const festivalDetail: FestivalDetail[] = [
     { id: 16, detail: "" },
     { id: 17, detail: "" },
     { id: 18, detail: "" },
+    //3年
     { id: 19, detail: "" },
     { id: 20, detail: "" },
     { id: 21, detail: "" },
@@ -29,6 +32,7 @@ export const festivalDetail: FestivalDetail[] = [
     { id: 23, detail: "" },
     { id: 24, detail: "" },
     { id: 25, detail: "" },
+    //部活・委員会・有志 
     { id: 26, detail: "" },
     { id: 27, detail: "" },
     { id: 28, detail: "" },
@@ -64,6 +68,7 @@ export const festivalDetail: FestivalDetail[] = [
     { id: 58, detail: "" },
     { id: 59, detail: "" },
     { id: 60, detail: "" },
+    //ステージ
     { id: 61, detail: "" },
     { id: 62, detail: "" },
     { id: 63, detail: "" },
